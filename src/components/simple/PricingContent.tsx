@@ -6,6 +6,7 @@
  */
 
 import { useState } from "react";
+import Link from "next/link";
 import Reveal from "@/components/simple/Reveal";
 
 function Check({ size = 15 }: { size?: number }) {
@@ -175,14 +176,14 @@ function WebsitePlanCard({ plan }: { plan: WebsitePlan }) {
         <span className="text-[15px] text-[#B7AFC9] line-through">{plan.market}</span>
       </div>
       <div className="font-display font-extrabold text-[38px]">{plan.price}</div>
-      <a
+      <Link
         href="/#book"
         className={`no-underline font-bold text-[15px] py-[13px] rounded-[10px] text-center transition-all duration-200 hover:-translate-y-0.5 ${
           plan.popular ? "bg-simple-purple text-white hover:brightness-105 hover:text-white" : "bg-white text-simple-ink border-[1.5px] border-simple-ink"
         }`}
       >
         {plan.cta}
-      </a>
+      </Link>
       <ul className="m-0 p-0 list-none flex flex-col gap-2.5 mt-1">
         {plan.features.map((f) => (
           <li key={f} className="flex gap-2 text-sm text-simple-ink-soft">
@@ -368,9 +369,9 @@ function ServicePanel({ s }: { s: ServicePanelData }) {
           </span>
         </div>
         {s.setupNote && <div className="text-sm text-[#6B6580]">{s.setupNote}</div>}
-        <a href="/#book" className="bg-simple-purple text-white no-underline font-bold text-base py-[15px] rounded-xl text-center mt-1 transition-all duration-200 hover:-translate-y-0.5 hover:brightness-105 hover:text-white">
+        <Link href="/#book" className="bg-simple-purple text-white no-underline font-bold text-base py-[15px] rounded-xl text-center mt-1 transition-all duration-200 hover:-translate-y-0.5 hover:brightness-105 hover:text-white">
           {s.cta}
-        </a>
+        </Link>
         <ul className="m-0 pt-5 mt-0 border-t border-simple-border list-none flex flex-col gap-[11px]">
           {s.features.map((f) => (
             <li key={f} className="flex gap-2.5 text-sm text-simple-ink-soft">
@@ -780,9 +781,9 @@ export default function PricingContent() {
             Book a free call and we&apos;ll show you exactly what you&apos;d pay elsewhere — and
             what you&apos;d pay here.
           </p>
-          <a href="/#book" className="bg-simple-ink text-white no-underline font-bold text-[17px] px-[30px] py-[17px] rounded-xl transition-all duration-200 hover:-translate-y-0.5 hover:text-white">
+          <Link href="/#book" className="bg-simple-ink text-white no-underline font-bold text-[17px] px-[30px] py-[17px] rounded-xl transition-all duration-200 hover:-translate-y-0.5 hover:text-white">
             Book a Free Call
-          </a>
+          </Link>
         </div>
       </div>
     </main>

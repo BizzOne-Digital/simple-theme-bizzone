@@ -1,5 +1,6 @@
 import PromoBar from "@/components/simple/PromoBar";
 import NavBar from "@/components/simple/NavBar";
+import Link from "next/link";
 import Reveal from "@/components/simple/Reveal";
 import FinalCTA from "@/components/simple/FinalCTA";
 import Footer from "@/components/simple/Footer";
@@ -88,12 +89,12 @@ export default function ServicesPage() {
             Everything you need to attract, engage and convert customers, from one team. Choose a
             single service or combine them into a complete growth system.
           </p>
-          <a
+          <Link
             href="/#book"
             className="bg-simple-purple text-white no-underline font-bold text-base px-[26px] py-[15px] rounded-xl transition-all duration-200 hover:-translate-y-0.5 hover:brightness-105 hover:text-white"
           >
             Book Free Strategy Call
-          </a>
+          </Link>
         </Reveal>
       </div>
 
