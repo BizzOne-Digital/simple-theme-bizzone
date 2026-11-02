@@ -7,6 +7,7 @@ import PromiseStrip from "@/components/simple/PromiseStrip";
 import Services from "@/components/simple/Services";
 import GrowthSystem from "@/components/simple/GrowthSystem";
 import Results from "@/components/simple/Results";
+import WebsiteShowcase from "@/components/simple/WebsiteShowcase";
 import WhyUs from "@/components/simple/WhyUs";
 import Pricing from "@/components/simple/Pricing";
 import FAQ from "@/components/simple/FAQ";
@@ -34,6 +35,7 @@ export default function Home() {
         <Services />
         <GrowthSystem />
         <Results />
+        <WebsiteShowcase />
         <WhyUs />
         <Pricing />
         <FAQ />

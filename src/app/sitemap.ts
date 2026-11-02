@@ -27,6 +27,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     page("/service/seo", 0.9),
     ...DYNAMIC_SERVICES.map((s) => page(`/service/${s.slug}`, 0.8)),
     page("/our-work", 0.7),
+    page("/portfolio", 0.7),
     page("/case-studies", 0.6),
     ...CASE_STUDIES.map((c) => page(`/case-studies/${c.slug}`, 0.6)),
     page("/blog", 0.6, "weekly"),

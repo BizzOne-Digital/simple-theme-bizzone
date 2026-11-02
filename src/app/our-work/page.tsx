@@ -1,9 +1,11 @@
+import Link from "next/link";
 import PromoBar from "@/components/simple/PromoBar";
 import NavBar from "@/components/simple/NavBar";
 import Reveal from "@/components/simple/Reveal";
 import FinalCTA from "@/components/simple/FinalCTA";
 import Footer from "@/components/simple/Footer";
 import { buildMetadata } from "@/lib/seo";
+import { WEBSITE_PROJECTS } from "@/data/web-portfolio";
 
 export const metadata = buildMetadata({
   title: "Our Work: Web Design, Logos & Social Media | BizzOne Digital",
@@ -115,6 +117,12 @@ export default function OurWorkPage() {
             <WorkCard mono="HC" name="Haven Customs" industry="Automotive Services" />
             <WorkCard mono="CC" name="Cobb Crunch" industry="Non-Profit & Community" />
           </div>
+          <Link
+            href="/portfolio"
+            className="self-start rounded-xl bg-simple-purple px-[26px] py-[15px] text-base font-bold text-white no-underline transition-all duration-200 hover:-translate-y-0.5 hover:text-white hover:brightness-105"
+          >
+            Browse all {WEBSITE_PROJECTS.length}+ websites we&rsquo;ve built →
+          </Link>
         </Reveal>
       </div>
 
