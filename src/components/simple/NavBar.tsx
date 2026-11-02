@@ -14,7 +14,7 @@ const NAV_LINKS = [
 /** Shared nav for the "simple" design. Pass `active` to highlight the current page ("" for legal pages). */
 export default function NavBar({ active }: { active?: string }) {
   return (
-    <div className="border-b border-simple-border bg-white">
+    <div className="z-40 border-b md:sticky md:top-0 border-simple-border bg-white">
       <div className="mx-auto flex max-w-[1240px] flex-wrap items-center justify-between gap-5 px-6 py-4">
         <Link href="/" className="flex items-center gap-2.5 text-simple-ink no-underline">
           <Image src="/fav.png" alt="BizzOne Digital logo" width={40} height={40} />
