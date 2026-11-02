@@ -164,15 +164,6 @@ export const WEBSITE_PROJECTS: WebsiteProject[] = [
     "featured": true
   },
   {
-    "slug": "gabrielecontracting-ca",
-    "url": "https://gabrielecontracting.ca/",
-    "domain": "gabrielecontracting.ca",
-    "name": "Gabriele Contracting Inc.",
-    "industry": "Construction & Trades",
-    "image": "/portfolio/gabrielecontracting-ca.webp",
-    "featured": true
-  },
-  {
     "slug": "blueriverlogistics-com",
     "url": "https://www.blueriverlogistics.com/",
     "domain": "blueriverlogistics.com",
@@ -226,7 +217,8 @@ export const WEBSITE_PROJECTS: WebsiteProject[] = [
     "domain": "gtarenovationconstruction.com",
     "name": "GTA Renovation & Construction Tradeworks",
     "industry": "Construction & Trades",
-    "image": "/portfolio/gtarenovationconstruction-com.webp"
+    "image": "/portfolio/gtarenovationconstruction-com.webp",
+    "featured": true
   },
   {
     "slug": "auraperfumesandcosmetics-com",
