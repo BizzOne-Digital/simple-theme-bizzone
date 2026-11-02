@@ -25,7 +25,7 @@ export default function Home() {
   return (
     <>
       <PromoBar />
-      <NavBar />
+      <NavBar active="Home" />
       <main className="bg-white text-simple-ink">
         <Hero />
         <TrustedLogos />
