@@ -12,3 +12,6 @@ next-env.d.ts
 
 # owner reference uploads
 *.zip
+
+# raw reel uploads (compressed copies live in public/reels)
+public/laibacontent/

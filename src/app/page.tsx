@@ -9,6 +9,7 @@ import GrowthSystem from "@/components/simple/GrowthSystem";
 import Results from "@/components/simple/Results";
 import WebsiteShowcase from "@/components/simple/WebsiteShowcase";
 import WhyUs from "@/components/simple/WhyUs";
+import ReelsShowcase from "@/components/simple/ReelsShowcase";
 import Pricing from "@/components/simple/Pricing";
 import FAQ from "@/components/simple/FAQ";
 import FinalCTA from "@/components/simple/FinalCTA";
@@ -37,6 +38,7 @@ export default function Home() {
         <Results />
         <WebsiteShowcase />
         <WhyUs />
+        <ReelsShowcase />
         <Pricing />
         <FAQ />
         <FinalCTA />
