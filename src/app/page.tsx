@@ -10,6 +10,7 @@ import Results from "@/components/simple/Results";
 import WebsiteShowcase from "@/components/simple/WebsiteShowcase";
 import WhyUs from "@/components/simple/WhyUs";
 import ReelsShowcase from "@/components/simple/ReelsShowcase";
+import { CLIENT_REELS, OFFER_REELS } from "@/data/reels";
 import Pricing from "@/components/simple/Pricing";
 import FAQ from "@/components/simple/FAQ";
 import FinalCTA from "@/components/simple/FinalCTA";
@@ -37,8 +38,33 @@ export default function Home() {
         <GrowthSystem />
         <Results />
         <WebsiteShowcase />
+        <ReelsShowcase
+          id="video-work"
+          alt
+          eyebrow="Video Production"
+          heading={
+            <>
+              Scroll-stopping videos <span className="text-simple-purple">we create for clients</span>
+            </>
+          }
+          sub="Short-form reels for Instagram, TikTok and ads, from shoot to edit, built to stop the scroll and bring in leads."
+          cta={{ href: "/#book", label: "Get Videos Like These →" }}
+          reels={CLIENT_REELS}
+          gridClass="lg:grid-cols-6"
+        />
         <WhyUs />
-        <ReelsShowcase />
+        <ReelsShowcase
+          id="reels"
+          eyebrow="Watch & See"
+          heading={
+            <>
+              A 5-page website for <span className="text-simple-purple">$79, one-time</span>
+            </>
+          }
+          sub="No subscriptions, no hidden fees, no tech skills needed. We handle the full setup for you."
+          cta={{ href: "/#book", label: "Book Free Consultation →" }}
+          reels={OFFER_REELS}
+        />
         <Pricing />
         <FAQ />
         <FinalCTA />

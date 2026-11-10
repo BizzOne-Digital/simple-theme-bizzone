@@ -19,6 +19,11 @@ const nextConfig = {
         source: "/portfolio/:file*.webp",
         headers: [{ key: "Cache-Control", value: "public, max-age=2592000, stale-while-revalidate=86400" }],
       },
+      // Reel videos and posters: same 30-day cache so repeat visits play from the browser.
+      {
+        source: "/reels/:file*",
+        headers: [{ key: "Cache-Control", value: "public, max-age=2592000, stale-while-revalidate=86400" }],
+      },
     ];
   },
 

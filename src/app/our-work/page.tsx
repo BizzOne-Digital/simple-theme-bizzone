@@ -6,6 +6,8 @@ import FinalCTA from "@/components/simple/FinalCTA";
 import Footer from "@/components/simple/Footer";
 import { buildMetadata } from "@/lib/seo";
 import { WEBSITE_PROJECTS } from "@/data/web-portfolio";
+import ReelsShowcase from "@/components/simple/ReelsShowcase";
+import { CLIENT_REELS } from "@/data/reels";
 
 export const metadata = buildMetadata({
   title: "Our Work: Web Design, Logos & Social Media | BizzOne Digital",
@@ -125,6 +127,21 @@ export default function OurWorkPage() {
           </Link>
         </Reveal>
       </div>
+
+      <ReelsShowcase
+        id="video-work"
+        alt
+        eyebrow="Video Production"
+        heading={
+          <>
+            Short-form videos <span className="text-simple-purple">made for our clients</span>
+          </>
+        }
+        sub="Reels for Instagram, TikTok and ads, from shoot to edit. Tap any video to watch it with sound."
+        cta={{ href: "/#book", label: "Get Videos Like These →" }}
+        reels={CLIENT_REELS}
+        gridClass="lg:grid-cols-6"
+      />
 
       <Reveal className="max-w-[1240px] mx-auto px-6 py-20 flex flex-col gap-9">
         <div className="max-w-[680px] flex flex-col gap-2.5">
