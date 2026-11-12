@@ -11,7 +11,6 @@ import WebsiteShowcase from "@/components/simple/WebsiteShowcase";
 import WhyUs from "@/components/simple/WhyUs";
 import ReelsShowcase from "@/components/simple/ReelsShowcase";
 import { CLIENT_REELS } from "@/data/reels";
-import OfferVideo from "@/components/simple/OfferVideo";
 import ReviewWidget from "@/components/simple/ReviewWidget";
 import Pricing from "@/components/simple/Pricing";
 import FAQ from "@/components/simple/FAQ";
@@ -56,7 +55,6 @@ export default function Home() {
           gridClass="lg:grid-cols-5"
         />
         <WhyUs />
-        <OfferVideo />
         <Pricing />
         <FAQ />
         <FinalCTA />

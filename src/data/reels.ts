@@ -1,12 +1,5 @@
 import type { ReelItem } from "@/components/simple/ReelsShowcase";
 
-// $79 five-page website offer ad (home page spotlight).
-export const OFFER_REEL: ReelItem = {
-  src: "/reels/reel-4.mp4",
-  poster: "/reels/reel-4.jpg",
-  label: "5-page website for $79",
-};
-
 // Promo videos produced for clients (home page video section).
 export const CLIENT_REELS: ReelItem[] = [
   { src: "/reels/work-haven-m4.mp4", poster: "/reels/work-haven-m4.jpg", label: "Haven Customs", caption: "Automotive · BMW M4 reel" },
