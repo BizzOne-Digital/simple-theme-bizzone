@@ -1,32 +1,26 @@
+import Image from "next/image";
 import Reveal from "./Reveal";
 
 const CLIENTS = [
-  { mono: "M2", name: "M2M Pro Cleaners" },
-  { mono: "TN", name: "Toronto Notary" },
-  { mono: "HT", name: "Haven Tint & Tire" },
-  { mono: "JM", name: "JMG Auto" },
-  { mono: "BP", name: "Bariis Pizza" },
-  { mono: "A1", name: "A1 Furnished" },
-  { mono: "GP", name: "Global Pardon" },
-  { mono: "HD", name: "Horizon Driving" },
-  { mono: "FS", name: "FairSafe" },
-  { mono: "3R", name: "3Ray Mobiles" },
+  { name: "Haven Customs", logo: "/logos/haven-customs.webp", w: 305 },
+  { name: "M2M Pro Cleaners", logo: "/logos/m2m-pro-cleaners.webp", w: 267 },
+  { name: "Bariis & Pizza House", logo: "/logos/bariis-pizza-house.webp", w: 336 },
+  { name: "A1 Furnished Homes Canada", logo: "/logos/a1-furnished-homes.webp", w: 414 },
+  { name: "Global Pardon and Waivers", logo: "/logos/global-pardon-waivers.webp", w: 517 },
+  { name: "FairSafe First Aid and Safety Solutions", logo: "/logos/fairsafe.webp", w: 713 },
 ];
 
-function Chip({ mono, name }: { mono: string; name: string }) {
+function Logo({ name, logo, w }: { name: string; logo: string; w: number }) {
   return (
-    <div className="inline-flex items-center gap-2.5 bg-white border border-simple-border rounded-xl px-[18px] py-2.5 whitespace-nowrap flex-none">
-      <div className="w-[30px] h-[30px] rounded-lg bg-simple-chip-bg text-simple-purple flex items-center justify-center font-display font-extrabold text-xs">
-        {mono}
-      </div>
-      <span className="font-display font-semibold text-[15px] text-simple-ink-faint">{name}</span>
+    <div className="flex h-[76px] flex-none items-center justify-center rounded-xl border border-simple-border bg-white px-6">
+      <Image src={logo} alt={`${name} logo`} width={w} height={160} className="h-11 w-auto max-w-[170px] object-contain" />
     </div>
   );
 }
 
 export default function TrustedLogos() {
-  // duplicated once for a seamless marquee loop
-  const track = [...CLIENTS, ...CLIENTS];
+  // four copies: the marquee scrolls -50%, so each half must be wider than the viewport
+  const track = [...CLIENTS, ...CLIENTS, ...CLIENTS, ...CLIENTS];
 
   return (
     <div className="bg-white border-b border-simple-border">
@@ -37,7 +31,7 @@ export default function TrustedLogos() {
         <div className="relative w-full overflow-hidden">
           <div className="logo-track flex items-center gap-4 w-max animate-marquee">
             {track.map((c, i) => (
-              <Chip key={`${c.mono}-${i}`} mono={c.mono} name={c.name} />
+              <Logo key={`${c.logo}-${i}`} {...c} />
             ))}
           </div>
           <div className="pointer-events-none absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-white to-transparent" />

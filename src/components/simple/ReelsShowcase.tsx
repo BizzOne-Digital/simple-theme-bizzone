@@ -80,6 +80,34 @@ function Reel({
   );
 }
 
+/** A row/grid of reels where only one plays at a time (swipeable on mobile). */
+export function ReelGrid({ reels, gridClass = "lg:grid-cols-5" }: { reels: ReelItem[]; gridClass?: string }) {
+  const [playing, setPlaying] = useState(-1);
+  const wrap = useRef<HTMLDivElement>(null);
+
+  const play = (i: number) => {
+    wrap.current?.querySelectorAll("video").forEach((v, j) => j !== i && v.pause());
+    setPlaying(i);
+  };
+
+  return (
+    <div
+      ref={wrap}
+      className={`-mx-6 flex snap-x snap-mandatory gap-5 overflow-x-auto px-6 pb-2 sm:mx-0 sm:grid sm:grid-cols-3 sm:overflow-visible sm:px-0 ${gridClass}`}
+    >
+      {reels.map((reel, i) => (
+        <Reel
+          key={reel.src}
+          reel={reel}
+          active={playing === i}
+          onPlay={() => play(i)}
+          onStop={() => setPlaying((p) => (p === i ? -1 : p))}
+        />
+      ))}
+    </div>
+  );
+}
+
 /** A section of vertical video reels with a heading and a call to action. */
 export default function ReelsShowcase({
   id,
@@ -100,14 +128,6 @@ export default function ReelsShowcase({
   alt?: boolean;
   gridClass?: string;
 }) {
-  const [playing, setPlaying] = useState(-1);
-  const wrap = useRef<HTMLDivElement>(null);
-
-  const play = (i: number) => {
-    wrap.current?.querySelectorAll("video").forEach((v, j) => j !== i && v.pause());
-    setPlaying(i);
-  };
-
   return (
     <div id={id} className={alt ? "border-y border-simple-border bg-simple-surface-alt" : "bg-white"}>
       <Reveal from="left" className="mx-auto flex max-w-[1240px] flex-col gap-10 px-6 py-[88px]">
@@ -129,20 +149,7 @@ export default function ReelsShowcase({
           </Link>
         </div>
 
-        <div
-          ref={wrap}
-          className={`-mx-6 flex snap-x snap-mandatory gap-5 overflow-x-auto px-6 pb-2 sm:mx-0 sm:grid sm:grid-cols-3 sm:overflow-visible sm:px-0 ${gridClass}`}
-        >
-          {reels.map((reel, i) => (
-            <Reel
-              key={reel.src}
-              reel={reel}
-              active={playing === i}
-              onPlay={() => play(i)}
-              onStop={() => setPlaying((p) => (p === i ? -1 : p))}
-            />
-          ))}
-        </div>
+        <ReelGrid reels={reels} gridClass={gridClass} />
       </Reveal>
     </div>
   );

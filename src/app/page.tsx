@@ -50,7 +50,7 @@ export default function Home() {
           sub="Short-form reels for Instagram, TikTok and ads, from shoot to edit, built to stop the scroll and bring in leads."
           cta={{ href: "/#book", label: "Get Videos Like These →" }}
           reels={CLIENT_REELS}
-          gridClass="lg:grid-cols-6"
+          gridClass="lg:grid-cols-4"
         />
         <WhyUs />
         <ReelsShowcase
