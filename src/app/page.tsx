@@ -10,7 +10,9 @@ import Results from "@/components/simple/Results";
 import WebsiteShowcase from "@/components/simple/WebsiteShowcase";
 import WhyUs from "@/components/simple/WhyUs";
 import ReelsShowcase from "@/components/simple/ReelsShowcase";
-import { CLIENT_REELS, OFFER_REELS } from "@/data/reels";
+import { CLIENT_REELS } from "@/data/reels";
+import OfferVideo from "@/components/simple/OfferVideo";
+import ReviewWidget from "@/components/simple/ReviewWidget";
 import Pricing from "@/components/simple/Pricing";
 import FAQ from "@/components/simple/FAQ";
 import FinalCTA from "@/components/simple/FinalCTA";
@@ -31,6 +33,7 @@ export default function Home() {
       <NavBar active="Home" />
       <main className="bg-white text-simple-ink">
         <Hero />
+        <ReviewWidget />
         <TrustedLogos />
         <MetaGooglePartners />
         <PromiseStrip />
@@ -50,21 +53,10 @@ export default function Home() {
           sub="Short-form reels for Instagram, TikTok and ads, from shoot to edit, built to stop the scroll and bring in leads."
           cta={{ href: "/#book", label: "Get Videos Like These →" }}
           reels={CLIENT_REELS}
-          gridClass="lg:grid-cols-4"
+          gridClass="lg:grid-cols-5"
         />
         <WhyUs />
-        <ReelsShowcase
-          id="reels"
-          eyebrow="Watch & See"
-          heading={
-            <>
-              A 5-page website for <span className="text-simple-purple">$79, one-time</span>
-            </>
-          }
-          sub="No subscriptions, no hidden fees, no tech skills needed. We handle the full setup for you."
-          cta={{ href: "/#book", label: "Book Free Consultation →" }}
-          reels={OFFER_REELS}
-        />
+        <OfferVideo />
         <Pricing />
         <FAQ />
         <FinalCTA />
