@@ -1,4 +1,5 @@
 import Reveal from "./Reveal";
+import PaymentBadges from "./PaymentBadges";
 
 type Service = {
   title: string;
@@ -108,6 +109,7 @@ export default function Services() {
             </div>
           ))}
         </div>
+        <PaymentBadges center />
       </Reveal>
     </div>
   );

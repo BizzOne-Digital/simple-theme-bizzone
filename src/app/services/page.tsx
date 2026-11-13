@@ -2,6 +2,7 @@ import PromoBar from "@/components/simple/PromoBar";
 import NavBar from "@/components/simple/NavBar";
 import Link from "next/link";
 import Reveal from "@/components/simple/Reveal";
+import PaymentBadges from "@/components/simple/PaymentBadges";
 import FinalCTA from "@/components/simple/FinalCTA";
 import Footer from "@/components/simple/Footer";
 import { buildMetadata } from "@/lib/seo";
@@ -119,6 +120,9 @@ export default function ServicesPage() {
           </div>
         ))}
       </Reveal>
+      <div className="max-w-[1240px] mx-auto px-6 pb-[72px]">
+        <PaymentBadges center />
+      </div>
 
       <FinalCTA
         heading="Not sure where to start?"

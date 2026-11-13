@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import PaymentBadges from "./PaymentBadges";
 import { motion } from "framer-motion";
 import { BUSINESS } from "@/data/site";
 import Reveal from "./Reveal";
@@ -63,18 +63,8 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-2.5 pt-1">
-            <div className="text-[13px] font-semibold text-simple-ink-soft">
-              Trusted payment gateways to keep your payments 100% secure.
-            </div>
-            <div className="flex flex-wrap items-center gap-3">
-              <span className="inline-flex h-11 items-center rounded-lg border border-simple-border bg-white px-4">
-                <Image src="/logos/stripe.webp" alt="Stripe" width={230} height={96} className="h-6 w-auto" />
-              </span>
-              <span className="inline-flex h-11 items-center rounded-lg border border-simple-border bg-white px-4">
-                <Image src="/logos/paypal.webp" alt="PayPal" width={386} height={96} className="h-6 w-auto" />
-              </span>
-            </div>
+          <div className="pt-1">
+            <PaymentBadges />
           </div>
         </div>
 

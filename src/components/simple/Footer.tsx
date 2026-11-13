@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import PaymentBadges from "./PaymentBadges";
 import { BUSINESS } from "@/data/site";
 
 function FacebookIcon() {
@@ -88,6 +89,10 @@ export default function Footer() {
             </a>
             <a href="https://www.linkedin.com/company/102540390" className="pl-[26px] text-simple-footer-text hover:text-white">LinkedIn</a>
           </div>
+        </div>
+
+        <div className="border-t border-simple-footer-line pt-[22px]">
+          <PaymentBadges dark />
         </div>
 
         <div className="flex flex-wrap justify-between gap-4 border-t border-simple-footer-line pt-[22px] text-sm">

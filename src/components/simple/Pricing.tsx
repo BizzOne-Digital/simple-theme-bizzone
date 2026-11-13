@@ -1,4 +1,5 @@
 import Link from "next/link";
+import PaymentBadges from "./PaymentBadges";
 import Reveal from "./Reveal";
 
 function Check({ color = "#8C00FF" }: { color?: string }) {
@@ -82,6 +83,7 @@ export default function Pricing() {
             </a>
           </div>
         </div>
+        <PaymentBadges center />
         <div className="flex justify-center">
           <Link href="/pricing" className="flex items-center gap-2 text-simple-purple no-underline font-bold text-[15px]">
             See every price &amp; compare all plans

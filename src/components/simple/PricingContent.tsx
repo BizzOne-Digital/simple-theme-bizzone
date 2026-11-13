@@ -8,6 +8,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Reveal from "@/components/simple/Reveal";
+import PaymentBadges from "@/components/simple/PaymentBadges";
 
 function Check({ size = 15 }: { size?: number }) {
   return (
@@ -303,6 +304,8 @@ function WebsitesPanel() {
           30-day money-back guarantee on every plan
         </span>
       </div>
+
+      <PaymentBadges center />
 
       <div className="flex flex-col gap-6">
         <h3 className="m-0 font-display font-bold text-xl">Compare website plans</h3>
@@ -753,6 +756,11 @@ export default function PricingContent() {
           {activeTab === "websites" && <WebsitesPanel />}
           {activeTab === "premium" && <PremiumPanel />}
           {SERVICE_PANELS[activeTab] && <ServicePanel s={SERVICE_PANELS[activeTab]} />}
+          {activeTab !== "websites" && (
+            <div className="mt-10">
+              <PaymentBadges center />
+            </div>
+          )}
         </div>
       </div>
 
