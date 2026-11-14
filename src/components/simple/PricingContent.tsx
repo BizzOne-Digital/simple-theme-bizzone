@@ -218,6 +218,17 @@ function CustomPlanCard() {
   );
 }
 
+export function WebsitePlansGrid() {
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 items-stretch">
+      {WEBSITE_PLANS.map((plan) => (
+        <WebsitePlanCard key={plan.name} plan={plan} />
+      ))}
+      <CustomPlanCard />
+    </div>
+  );
+}
+
 // ---------- Compare table ----------
 type CompareCell = "check" | "dash" | string;
 const COMPARE_ROWS: [string, CompareCell, CompareCell, CompareCell][] = [

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import PaymentBadges from "./PaymentBadges";
 import Reveal from "./Reveal";
+import { WebsitePlansGrid } from "./PricingContent";
 
 function Check({ color = "#8C00FF" }: { color?: string }) {
   return (
@@ -23,22 +24,13 @@ export default function Pricing() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {/* Website */}
-          <div className="bg-white border border-simple-border rounded-2xl p-8 flex flex-col gap-3.5 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_36px_rgba(15,10,26,0.10)]">
-            <div className="font-bold text-lg">Website</div>
-            <div className="font-display font-extrabold text-[44px] leading-none">
-              $79<span className="text-base font-medium text-simple-ink-soft"> starting</span>
-            </div>
-            <div className="text-base text-simple-ink-soft flex-grow">
-              A professional, mobile-ready website, live in 24–48 hours. Premium ($149) and
-              Advanced ($299) options available.
-            </div>
-            <a href="#book" className="border-[1.5px] border-simple-ink text-simple-ink no-underline font-bold py-3.5 rounded-xl text-center transition-all duration-200 hover:-translate-y-0.5">
-              Get My Website
-            </a>
-          </div>
+        <div className="flex flex-col gap-6">
+          <h3 className="m-0 font-display font-bold text-2xl">Website plans</h3>
+          <WebsitePlansGrid />
+        </div>
 
+        <h3 className="m-0 font-display font-bold text-2xl">Monthly growth &amp; video</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Video Editing */}
           <div className="bg-white border border-simple-border rounded-2xl p-8 flex flex-col gap-3.5 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_36px_rgba(15,10,26,0.10)]">
             <div className="font-bold text-lg">Video Editing</div>
