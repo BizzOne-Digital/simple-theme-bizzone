@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Reveal from "./Reveal";
-import PaymentBadges from "./PaymentBadges";
 
 function VerifiedBadge() {
   return (
@@ -106,7 +105,6 @@ export default function MetaGooglePartners() {
               </a>
             </div>
           </div>
-          <PaymentBadges center />
         </Reveal>
       </div>
 

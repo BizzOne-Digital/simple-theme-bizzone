@@ -83,7 +83,7 @@ export default function Pricing() {
             </a>
           </div>
         </div>
-        <PaymentBadges center />
+        <PaymentBadges center text="Pay your way with Stripe or PayPal — every checkout is encrypted and protected." />
         <div className="flex justify-center">
           <Link href="/pricing" className="flex items-center gap-2 text-simple-purple no-underline font-bold text-[15px]">
             See every price &amp; compare all plans

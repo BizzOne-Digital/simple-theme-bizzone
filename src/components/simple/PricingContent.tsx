@@ -124,16 +124,16 @@ type WebsitePlan = {
 const WEBSITE_PLANS: WebsitePlan[] = [
   {
     name: "Standard",
-    desc: "Great for a simple brochure-style site. Custom-coded — not a template.",
-    market: "$1,500–$3,000",
+    desc: "A clean, professional site to get your business online fast.",
+    market: "$149–$199",
     price: "$79",
     cta: "Choose Standard",
     features: ["Up to 5 pages", "1–2 banner images", "Basic on-page SEO", "Mobile responsive"],
   },
   {
     name: "Premium",
-    desc: "Our most-picked plan — built to convert. Custom-coded — not a template.",
-    market: "$3,000–$8,000",
+    desc: "Our most popular plan, built to turn visitors into leads.",
+    market: "$399–$699",
     price: "$149",
     cta: "Choose Premium",
     popular: true,
@@ -146,8 +146,8 @@ const WEBSITE_PLANS: WebsitePlan[] = [
   },
   {
     name: "Advanced",
-    desc: "Full online store, ready to sell. Custom-coded — not a template.",
-    market: "$8,000–$20,000+",
+    desc: "A complete online store, ready to take orders from day one.",
+    market: "$599–$1,000",
     price: "$299",
     cta: "Choose Advanced",
     features: [
@@ -172,7 +172,7 @@ function WebsitePlanCard({ plan }: { plan: WebsitePlan }) {
         </div>
       )}
       <div className="font-display font-bold text-[19px]">{plan.name}</div>
-      <div className="text-sm text-[#6B6580] min-h-[36px]">{plan.desc}</div>
+      <div className="text-sm text-[#6B6580] min-h-[40px]">{plan.desc}</div>
       <div className="flex items-baseline gap-2.5 flex-wrap">
         <span className="text-[15px] text-[#B7AFC9] line-through">{plan.market}</span>
       </div>
@@ -193,6 +193,27 @@ function WebsitePlanCard({ plan }: { plan: WebsitePlan }) {
           </li>
         ))}
       </ul>
+    </div>
+  );
+}
+
+function CustomPlanCard() {
+  return (
+    <div className="relative bg-simple-ink text-white rounded-[18px] p-7 flex flex-col gap-4">
+      <div className="font-display font-bold text-[19px]">Custom</div>
+      <div className="text-sm text-white/70 min-h-[40px]">Need something bigger or one of a kind? We&apos;ll build it around you.</div>
+      <div className="text-[15px] text-white/50">Quoted per project</div>
+      <div className="font-display font-extrabold text-[38px] leading-[1.15]">Let&apos;s talk</div>
+      <Link
+        href="/contact"
+        className="no-underline font-bold text-[15px] py-[13px] rounded-[10px] text-center bg-simple-lime text-simple-ink transition-all duration-200 hover:-translate-y-0.5 hover:text-simple-ink"
+      >
+        Contact Us
+      </Link>
+      <p className="m-0 mt-1 text-sm text-white/80">
+        Our pricing is a fraction of what the same project costs elsewhere. Tell us what you have in mind and
+        we&apos;ll send you a clear, no-pressure quote.
+      </p>
     </div>
   );
 }
@@ -267,10 +288,11 @@ function WebsitesPanel() {
         <p className="m-0 text-base text-simple-ink-soft">All plans include hosting, a custom domain connection and mobile-first design.</p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 items-stretch">
         {WEBSITE_PLANS.map((plan) => (
           <WebsitePlanCard key={plan.name} plan={plan} />
         ))}
+        <CustomPlanCard />
       </div>
 
       <div className="flex justify-center -mt-4">
@@ -305,7 +327,7 @@ function WebsitesPanel() {
         </span>
       </div>
 
-      <PaymentBadges center />
+      <PaymentBadges center text="Pay your way with Stripe or PayPal — every checkout is encrypted and protected." />
 
       <div className="flex flex-col gap-6">
         <h3 className="m-0 font-display font-bold text-xl">Compare website plans</h3>
@@ -756,11 +778,6 @@ export default function PricingContent() {
           {activeTab === "websites" && <WebsitesPanel />}
           {activeTab === "premium" && <PremiumPanel />}
           {SERVICE_PANELS[activeTab] && <ServicePanel s={SERVICE_PANELS[activeTab]} />}
-          {activeTab !== "websites" && (
-            <div className="mt-10">
-              <PaymentBadges center />
-            </div>
-          )}
         </div>
       </div>
 
