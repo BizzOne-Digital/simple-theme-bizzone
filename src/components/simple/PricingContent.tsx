@@ -254,11 +254,11 @@ function Cell({ value, highlight }: { value: CompareCell; highlight?: boolean })
 
 function CompareTable() {
   return (
-    <div id="compare-table" className="scroll-mt-24 border border-simple-border rounded-[18px] overflow-hidden shadow-[0_2px_10px_rgba(15,10,26,0.04)]">
-      <table className="w-full border-collapse">
+    <div id="compare-table" className="scroll-mt-24 border border-simple-border rounded-[18px] overflow-x-auto shadow-[0_2px_10px_rgba(15,10,26,0.04)]">
+      <table className="w-full border-collapse min-w-[560px]">
         <thead>
           <tr className="bg-simple-ink">
-            <th className="py-5 px-6 text-left font-display font-bold text-sm text-white">Compare plans</th>
+            <th className="sticky left-0 z-10 bg-simple-ink py-5 px-4 md:px-6 text-left font-display font-bold text-sm text-white">Compare plans</th>
             <th className="py-5 px-4 text-center min-w-[120px]">
               <div className="font-display font-bold text-[15px] text-white">Standard</div>
               <div className="font-display font-extrabold text-xl text-simple-lime mt-0.5">$79</div>
@@ -276,7 +276,7 @@ function CompareTable() {
         <tbody>
           {COMPARE_ROWS.map((row, i) => (
             <tr key={row[0]} className={`border-b border-simple-border ${i % 2 === 0 ? "bg-white" : "bg-[#FBFAFD]"}`}>
-              <td className="py-4 px-6 text-sm text-simple-ink font-semibold text-left">{row[0]}</td>
+              <td className={`sticky left-0 z-10 max-w-[150px] md:max-w-none py-4 px-4 md:px-6 text-sm text-simple-ink font-semibold text-left ${i % 2 === 0 ? "bg-white" : "bg-[#FBFAFD]"}`}>{row[0]}</td>
               <Cell value={row[1]} />
               <Cell value={row[2]} highlight />
               <Cell value={row[3]} />

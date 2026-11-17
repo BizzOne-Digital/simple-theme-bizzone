@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { BUSINESS } from "@/data/site";
+import MobileMenu from "./MobileMenu";
 
 const NAV_LINKS = [
   { href: "/", label: "Home" },
@@ -14,8 +15,8 @@ const NAV_LINKS = [
 /** Shared nav for the "simple" design. Pass `active` to highlight the current page ("" for legal pages). */
 export default function NavBar({ active }: { active?: string }) {
   return (
-    <div className="z-40 border-b md:sticky md:top-0 border-simple-border bg-white">
-      <div className="mx-auto flex max-w-[1240px] flex-wrap items-center justify-between gap-5 px-6 py-4">
+    <div className="relative z-40 border-b sticky top-0 border-simple-border bg-white">
+      <div className="mx-auto flex max-w-[1240px] items-center justify-between gap-5 px-6 py-3 md:flex-wrap md:py-4">
         <Link href="/" className="flex items-center gap-2.5 text-simple-ink no-underline">
           <Image src="/fav.png" alt="BizzOne Digital logo" width={40} height={40} />
           <span className="font-display text-[22px] font-bold tracking-tight">
@@ -23,7 +24,7 @@ export default function NavBar({ active }: { active?: string }) {
           </span>
         </Link>
 
-        <div className="flex flex-wrap gap-7 text-[15px] font-medium">
+        <div className="hidden md:flex flex-wrap gap-7 text-[15px] font-medium">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
@@ -37,7 +38,7 @@ export default function NavBar({ active }: { active?: string }) {
           ))}
         </div>
 
-        <div className="flex flex-wrap items-center gap-3">
+        <div className="hidden md:flex flex-wrap items-center gap-3">
           <Link href={BUSINESS.phoneHref} className="px-1 py-3 text-[15px] font-bold text-simple-ink no-underline hover:text-simple-purple">
             {BUSINESS.phoneDisplay}
           </Link>
@@ -48,6 +49,7 @@ export default function NavBar({ active }: { active?: string }) {
             Book a Free Call
           </Link>
         </div>
+        <MobileMenu links={NAV_LINKS} active={active} phoneHref={BUSINESS.phoneHref} phoneDisplay={BUSINESS.phoneDisplay} />
       </div>
     </div>
   );

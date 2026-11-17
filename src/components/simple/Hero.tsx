@@ -1,6 +1,7 @@
 "use client";
 
 import PaymentBadges from "./PaymentBadges";
+import MessageUs from "./MessageUs";
 import { motion } from "framer-motion";
 import { BUSINESS } from "@/data/site";
 import Reveal from "./Reveal";
@@ -53,6 +54,8 @@ export default function Hero() {
               Call Us Now
             </a>
           </div>
+
+          <MessageUs />
 
           <div className="flex flex-wrap gap-7 pt-2 text-[15px] text-simple-ink-soft">
             <div className="flex items-center gap-2">
