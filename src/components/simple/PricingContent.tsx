@@ -173,10 +173,6 @@ function WebsitePlanCard({ plan }: { plan: WebsitePlan }) {
       )}
       <div className="font-display font-bold text-[19px]">{plan.name}</div>
       <div className="text-sm text-[#6B6580] min-h-[40px]">{plan.desc}</div>
-      <div className="flex items-baseline gap-2.5 flex-wrap">
-        <span className="text-[15px] text-[#B7AFC9] line-through">{plan.market}</span>
-      </div>
-      <div className="font-display font-extrabold text-[38px]">{plan.price}</div>
       <Link
         href="/#book"
         className={`no-underline font-bold text-[15px] py-[13px] rounded-[10px] text-center transition-all duration-200 hover:-translate-y-0.5 ${
@@ -261,15 +257,12 @@ function CompareTable() {
             <th className="sticky left-0 z-10 bg-simple-ink py-5 px-4 md:px-6 text-left font-display font-bold text-sm text-white">Compare plans</th>
             <th className="py-5 px-4 text-center min-w-[120px]">
               <div className="font-display font-bold text-[15px] text-white">Standard</div>
-              <div className="font-display font-extrabold text-xl text-simple-lime mt-0.5">$79</div>
             </th>
             <th className="py-5 px-4 text-center min-w-[120px] bg-[#1A0F30]">
               <div className="font-display font-bold text-[15px] text-white">Premium</div>
-              <div className="font-display font-extrabold text-xl text-simple-lime mt-0.5">$149</div>
             </th>
             <th className="py-5 px-4 text-center min-w-[120px]">
               <div className="font-display font-bold text-[15px] text-white">Advanced</div>
-              <div className="font-display font-extrabold text-xl text-simple-lime mt-0.5">$299</div>
             </th>
           </tr>
         </thead>

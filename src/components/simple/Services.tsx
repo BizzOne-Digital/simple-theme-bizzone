@@ -50,8 +50,7 @@ const SERVICES: Service[] = [
   {
     title: "Websites",
     desc: "Fast, mobile-first websites built to turn visitors into calls and form fills — live in 24–48 hours.",
-    cta: "Built to Convert →",
-    badge: "From $79",
+    cta: "Built to Convert →",
     icon: <><rect x="2" y="4" width="20" height="14" rx="2" /><path d="M8 22h8M12 18v4" /></>,
   },
   {

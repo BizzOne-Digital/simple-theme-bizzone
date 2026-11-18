@@ -6,7 +6,6 @@ import MetaGooglePartners from "@/components/simple/MetaGooglePartners";
 import PromiseStrip from "@/components/simple/PromiseStrip";
 import Services from "@/components/simple/Services";
 import GrowthSystem from "@/components/simple/GrowthSystem";
-import Results from "@/components/simple/Results";
 import WebsiteShowcase from "@/components/simple/WebsiteShowcase";
 import WhyUs from "@/components/simple/WhyUs";
 import ReelsShowcase from "@/components/simple/ReelsShowcase";
@@ -38,7 +37,6 @@ export default function Home() {
         <PromiseStrip />
         <Services />
         <GrowthSystem />
-        <Results />
         <WebsiteShowcase />
         <ReelsShowcase
           id="video-work"

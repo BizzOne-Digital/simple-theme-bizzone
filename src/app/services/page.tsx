@@ -65,8 +65,7 @@ const SERVICES: Service[] = [
   {
     title: "Web Development",
     desc: "Fast, mobile-friendly websites with SEO setup, booking and payments — live in 24–48 hours.",
-    icon: <><rect x="2" y="4" width="20" height="14" rx="2" /><path d="M8 22h8M12 18v4" /></>,
-    badge: "From $79",
+    icon: <><rect x="2" y="4" width="20" height="14" rx="2" /><path d="M8 22h8M12 18v4" /></>,
   },
 ];
 
