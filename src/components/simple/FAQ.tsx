@@ -7,7 +7,7 @@ const FAQS = [
   },
   {
     q: "Do I need a big budget to get started?",
-    a: "No. Websites start at $79 and video editing at $99 a month. On your free call, we'll recommend a plan that fits your budget.",
+    a: "No. Websites start at $79 as a one-time payment, with no monthly fees. On your free call, we'll recommend a plan that fits your budget.",
   },
   {
     q: "How fast can my website go live?",

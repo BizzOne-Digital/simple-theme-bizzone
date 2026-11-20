@@ -168,12 +168,15 @@ function WebsitePlanCard({ plan }: { plan: WebsitePlan }) {
       <div className="font-display font-bold text-[19px]">{plan.name}</div>
       <div className="text-sm text-[#6B6580] min-h-[40px]">{plan.desc}</div>
       {plan.price ? (
-        <div className="font-display font-extrabold text-[38px] leading-[44px]">
-          {plan.price}
-          <span className="text-[15px] font-medium text-simple-ink-soft"> starting</span>
+        <div className="flex min-h-[68px] flex-col justify-center">
+          <div className="font-display font-extrabold text-[38px] leading-none">{plan.price}</div>
+          <div className="mt-1.5 text-sm font-semibold text-simple-ink-soft">One-time payment</div>
         </div>
       ) : (
-        <div className="font-display font-bold text-[20px] leading-[44px] text-simple-ink">Contact sales for a quote</div>
+        <div className="flex min-h-[68px] flex-col justify-center">
+          <div className="font-display font-bold text-[19px] leading-tight text-simple-ink">Contact sales</div>
+          <div className="mt-1.5 text-sm font-semibold text-simple-ink-soft">for a custom quote</div>
+        </div>
       )}
       <Link
         href={plan.price ? "/#book" : "/contact"}
@@ -216,13 +219,95 @@ function CustomPlanCard() {
   );
 }
 
+// Supplied by the team (Maheen) — keep wording in sync with the website FAQ below.
+const WEBSITE_INCLUDES: [string, string][] = [
+  ["Custom design", "built for your business, not a template"],
+  ["Mobile responsive,", "looks great on phones, tablets and computers"],
+  ["Free hosting", "included"],
+  ["SSL secured", "(https)"],
+  ["Complimentary keywords", "for your services and area added to your content"],
+  ["First draft in 24 to 48 hours", ""],
+  ["Preview and revisions", "before your site goes live"],
+  ["No monthly fees", "for your website, it's a one-time payment"],
+  ["Complete ownership", "of your website"],
+  ["30-day money-back guarantee", ""],
+];
+
+function OwnershipNote() {
+  return (
+    <div className="rounded-[18px] border border-simple-border bg-simple-surface-alt px-6 py-7 md:px-9">
+      <h3 className="m-0 mb-5 font-display font-bold text-xl text-simple-ink">What&apos;s included with every website</h3>
+      <ul className="m-0 grid list-none grid-cols-1 gap-x-8 gap-y-3 p-0 sm:grid-cols-2">
+        {WEBSITE_INCLUDES.map(([bold, rest]) => (
+          <li key={bold} className="flex gap-2.5 text-[15px] text-simple-ink-soft">
+            <Check size={18} />
+            <span>
+              <strong className="font-bold text-simple-ink">{bold}</strong>
+              {rest && ` ${rest}`}
+            </span>
+          </li>
+        ))}
+      </ul>
+      <p className="m-0 mt-5 text-sm text-simple-ink-soft">
+        No monthly charges unless you choose to opt in to our maintenance plan.
+      </p>
+    </div>
+  );
+}
+
+const WEBSITE_FAQS = [
+  {
+    q: "Is the website a one-time payment?",
+    a: "Yes. Every website package is a one-time payment, with no monthly fees for your website.",
+  },
+  {
+    q: "Do I own my website?",
+    a: "Yes. You get complete ownership of your website.",
+  },
+  {
+    q: "What does the optional maintenance plan cover?",
+    a: "Our optional maintenance plan covers change requests, ongoing payment gateway support, email (SMTP) support, bug fixes and general support. Contact sales for details.",
+  },
+  {
+    q: "Can I see my website before paying?",
+    a: "Payment is made upfront, since every site is built from scratch for you. You'll then review a full preview, request changes, and your site only goes live once you approve it.",
+  },
+  {
+    q: "What if I'm not satisfied?",
+    a: "You're covered by our 30-day money-back guarantee. If you're not satisfied with your final website, you get a full refund.",
+  },
+  {
+    q: "Do you work on WordPress websites?",
+    a: "No. We build custom-coded websites only, which load faster, are more secure, and have no plugin or platform fees.",
+  },
+];
+
+function WebsiteFAQ() {
+  return (
+    <div className="flex flex-col gap-6">
+      <h3 className="m-0 font-display font-bold text-xl">Website questions</h3>
+      <div className="flex flex-col gap-3">
+        {WEBSITE_FAQS.map((item) => (
+          <details key={item.q} className="rounded-2xl border border-simple-border bg-white px-6 py-5">
+            <summary className="cursor-pointer text-[17px] font-bold text-simple-ink">{item.q}</summary>
+            <p className="m-0 mt-3 text-[15px] text-simple-ink-soft">{item.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export function WebsitePlansGrid() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 items-stretch">
-      {WEBSITE_PLANS.map((plan) => (
-        <WebsitePlanCard key={plan.name} plan={plan} />
-      ))}
-      <CustomPlanCard />
+    <div className="flex flex-col gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 items-stretch">
+        {WEBSITE_PLANS.map((plan) => (
+          <WebsitePlanCard key={plan.name} plan={plan} />
+        ))}
+        <CustomPlanCard />
+      </div>
+      <OwnershipNote />
     </div>
   );
 }
@@ -295,12 +380,7 @@ function WebsitesPanel() {
         <p className="m-0 text-base text-simple-ink-soft">All plans include hosting, a custom domain connection and mobile-first design.</p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 items-stretch">
-        {WEBSITE_PLANS.map((plan) => (
-          <WebsitePlanCard key={plan.name} plan={plan} />
-        ))}
-        <CustomPlanCard />
-      </div>
+      <WebsitePlansGrid />
 
       <div className="flex justify-center -mt-4">
         <a
@@ -314,25 +394,6 @@ function WebsitesPanel() {
         </a>
       </div>
 
-      <div className="flex flex-wrap gap-7 justify-center">
-        <span className="flex items-center gap-2 text-sm text-simple-ink-faint font-semibold">
-          <Check size={18} />
-          Every site is custom-coded — no WordPress, no templates
-        </span>
-        <span className="flex items-center gap-2 text-sm text-simple-ink-faint font-semibold">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8C00FF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-          </svg>
-          Free SSL, secure hosting &amp; spam-protected forms built in
-        </span>
-        <span className="flex items-center gap-2 text-sm text-simple-ink-faint font-semibold">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8C00FF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <circle cx="12" cy="12" r="9" />
-            <path d="M9 12l2 2 4-4" />
-          </svg>
-          30-day money-back guarantee on every plan
-        </span>
-      </div>
 
       <PaymentBadges center text="Pay your way with Stripe or PayPal — every checkout is encrypted and protected." />
 
@@ -340,6 +401,8 @@ function WebsitesPanel() {
         <h3 className="m-0 font-display font-bold text-xl">Compare website plans</h3>
         <CompareTable />
       </div>
+
+      <WebsiteFAQ />
 
       <div className="bg-simple-ink rounded-[18px] p-9 flex flex-wrap gap-6 items-center justify-between">
         <div className="flex flex-col gap-1.5 max-w-[620px]">
