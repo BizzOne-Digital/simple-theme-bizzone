@@ -114,8 +114,7 @@ const PARTNERS: { Icon: React.ComponentType; label: string; withId?: boolean }[]
 type WebsitePlan = {
   name: string;
   desc: string;
-  market: string;
-  price: string;
+  price?: string;
   cta: string;
   features: string[];
   popular?: boolean;
@@ -125,7 +124,6 @@ const WEBSITE_PLANS: WebsitePlan[] = [
   {
     name: "Standard",
     desc: "A clean, professional site to get your business online fast.",
-    market: "$149–$199",
     price: "$79",
     cta: "Choose Standard",
     features: ["Up to 5 pages", "1–2 banner images", "Basic on-page SEO", "Mobile responsive"],
@@ -133,9 +131,7 @@ const WEBSITE_PLANS: WebsitePlan[] = [
   {
     name: "Premium",
     desc: "Our most popular plan, built to turn visitors into leads.",
-    market: "$399–$699",
-    price: "$149",
-    cta: "Choose Premium",
+    cta: "Contact Sales",
     popular: true,
     features: [
       "Up to 12 pages, bilingual setup",
@@ -147,9 +143,7 @@ const WEBSITE_PLANS: WebsitePlan[] = [
   {
     name: "Advanced",
     desc: "A complete online store, ready to take orders from day one.",
-    market: "$599–$1,000",
-    price: "$299",
-    cta: "Choose Advanced",
+    cta: "Contact Sales",
     features: [
       "Up to 15 pages, full eCommerce",
       "First 100 products listed for you",
@@ -173,8 +167,16 @@ function WebsitePlanCard({ plan }: { plan: WebsitePlan }) {
       )}
       <div className="font-display font-bold text-[19px]">{plan.name}</div>
       <div className="text-sm text-[#6B6580] min-h-[40px]">{plan.desc}</div>
+      {plan.price ? (
+        <div className="font-display font-extrabold text-[38px] leading-[44px]">
+          {plan.price}
+          <span className="text-[15px] font-medium text-simple-ink-soft"> starting</span>
+        </div>
+      ) : (
+        <div className="font-display font-bold text-[20px] leading-[44px] text-simple-ink">Contact sales for a quote</div>
+      )}
       <Link
-        href="/#book"
+        href={plan.price ? "/#book" : "/contact"}
         className={`no-underline font-bold text-[15px] py-[13px] rounded-[10px] text-center transition-all duration-200 hover:-translate-y-0.5 ${
           plan.popular ? "bg-simple-purple text-white hover:brightness-105 hover:text-white" : "bg-white text-simple-ink border-[1.5px] border-simple-ink"
         }`}
@@ -204,7 +206,7 @@ function CustomPlanCard() {
         href="/contact"
         className="no-underline font-bold text-[15px] py-[13px] rounded-[10px] text-center bg-simple-lime text-simple-ink transition-all duration-200 hover:-translate-y-0.5 hover:text-simple-ink"
       >
-        Contact Us
+        Contact Sales
       </Link>
       <p className="m-0 mt-1 text-sm text-white/80">
         Our pricing is a fraction of what the same project costs elsewhere. Tell us what you have in mind and
@@ -257,6 +259,7 @@ function CompareTable() {
             <th className="sticky left-0 z-10 bg-simple-ink py-5 px-4 md:px-6 text-left font-display font-bold text-sm text-white">Compare plans</th>
             <th className="py-5 px-4 text-center min-w-[120px]">
               <div className="font-display font-bold text-[15px] text-white">Standard</div>
+              <div className="font-display font-extrabold text-xl text-simple-lime mt-0.5">$79</div>
             </th>
             <th className="py-5 px-4 text-center min-w-[120px] bg-[#1A0F30]">
               <div className="font-display font-bold text-[15px] text-white">Premium</div>
@@ -363,24 +366,13 @@ type ServicePanelData = {
   icon: React.ReactNode;
   name: string;
   pain: string;
-  market?: string;
-  price: string;
-  unit?: string;
-  setupNote?: string;
-  badge?: string;
   features: string[];
   cta: string;
 };
 
 function ServicePanel({ s }: { s: ServicePanelData }) {
   return (
-    <div className="max-w-[480px] mx-auto w-full">
-      <div className="relative bg-white border border-simple-border rounded-[20px] p-9 flex flex-col gap-4 shadow-[0_4px_20px_rgba(15,10,26,0.05)]">
-        {s.badge && (
-          <div className="absolute -top-3 right-6 bg-simple-ink text-simple-lime font-display font-bold text-[11px] px-3.5 py-[5px] rounded-full whitespace-nowrap">
-            {s.badge}
-          </div>
-        )}
+      <div className="relative bg-white border border-simple-border rounded-[20px] p-8 flex flex-col gap-4 shadow-[0_4px_20px_rgba(15,10,26,0.05)]">
         <div className="w-[52px] h-[52px] rounded-2xl bg-simple-chip-bg flex items-center justify-center">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#8C00FF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
             {s.icon}
@@ -390,18 +382,7 @@ function ServicePanel({ s }: { s: ServicePanelData }) {
           <div className="font-display font-bold text-[22px]">{s.name}</div>
           <div className="text-sm text-[#6B6580] mt-1">{s.pain}</div>
         </div>
-        <div className="flex items-baseline gap-3 flex-wrap pt-1">
-          {s.market && <span className="text-[17px] text-[#B7AFC9] line-through">{s.market}</span>}
-          <span className="font-display font-extrabold text-[40px]">
-            {s.price}
-            {s.unit && <span className="text-[15px] font-medium text-simple-ink-soft">{s.unit}</span>}
-          </span>
-        </div>
-        {s.setupNote && <div className="text-sm text-[#6B6580]">{s.setupNote}</div>}
-        <Link href="/#book" className="bg-simple-purple text-white no-underline font-bold text-base py-[15px] rounded-xl text-center mt-1 transition-all duration-200 hover:-translate-y-0.5 hover:brightness-105 hover:text-white">
-          {s.cta}
-        </Link>
-        <ul className="m-0 pt-5 mt-0 border-t border-simple-border list-none flex flex-col gap-[11px]">
+        <ul className="m-0 pt-5 mt-0 border-t border-simple-border list-none flex flex-col gap-[11px] flex-grow">
           {s.features.map((f) => (
             <li key={f} className="flex gap-2.5 text-sm text-simple-ink-soft">
               <Check />
@@ -409,6 +390,24 @@ function ServicePanel({ s }: { s: ServicePanelData }) {
             </li>
           ))}
         </ul>
+        <Link href="/contact" className="bg-simple-purple text-white no-underline font-bold text-base py-[15px] rounded-xl text-center mt-2 transition-all duration-200 hover:-translate-y-0.5 hover:brightness-105 hover:text-white">
+          Contact Sales
+        </Link>
+      </div>
+  );
+}
+
+function ServicesPanel() {
+  return (
+    <div className="flex flex-col gap-10">
+      <div className="max-w-[680px] mx-auto text-center flex flex-col gap-2.5">
+        <h3 className="m-0 font-display font-extrabold text-[26px]">Every service we offer</h3>
+        <p className="m-0 text-[15px] text-[#6B6580]">Pick one service or combine a few. Contact sales and we&apos;ll put together a plan that fits your business.</p>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {Object.entries(SERVICE_PANELS).map(([key, s]) => (
+          <ServicePanel key={key} s={s} />
+        ))}
       </div>
     </div>
   );
@@ -419,10 +418,6 @@ const SERVICE_PANELS: Record<string, ServicePanelData> = {
     icon: <><path d="m3 11 18-5v12L3 14v-3z" /><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6" /></>,
     name: "Meta Ads",
     pain: "Your phone isn't ringing from Facebook or Instagram.",
-    market: "$500–$1,500",
-    price: "$99",
-    unit: "/mo",
-    badge: "93% off",
     features: ["1 ad campaign, optimized weekly", "2 ad creatives included", "Weekly performance check-ins"],
     cta: "Get More Leads on Meta",
   },
@@ -430,10 +425,6 @@ const SERVICE_PANELS: Record<string, ServicePanelData> = {
     icon: <><circle cx="11" cy="11" r="7" /><path d="m21 21-4.3-4.3" /></>,
     name: "Google Ads",
     pain: "Customers search for you and find competitors instead.",
-    market: "$500–$1,500",
-    price: "$99",
-    unit: "/mo",
-    badge: "93% off",
     features: ["1 ad campaign, optimized weekly", "Search, Maps & YouTube placements", "Creatives not included — ask about adding them"],
     cta: "Get Found on Google",
   },
@@ -441,10 +432,6 @@ const SERVICE_PANELS: Record<string, ServicePanelData> = {
     icon: <><path d="M3 20h18" /><path d="M6 16V10M11 16V6M16 16v-4M21 16V8" /></>,
     name: "SEO",
     pain: "You're invisible on Google search.",
-    market: "$500–$2,000",
-    price: "$99",
-    unit: "/mo",
-    badge: "95% off",
     features: ["Keyword & on-page optimization", "Google Business Profile setup", "Monthly ranking check-in"],
     cta: "Rank Higher on Google",
   },
@@ -452,10 +439,6 @@ const SERVICE_PANELS: Record<string, ServicePanelData> = {
     icon: <><rect x="2" y="6" width="14" height="12" rx="2" /><path d="m16 10 6-3v10l-6-3" /></>,
     name: "Video Editing",
     pain: "You post inconsistently — editing takes forever.",
-    market: "$300–$600",
-    price: "$99",
-    unit: "/mo",
-    badge: "83% off",
     features: ["5 reels edited every month", "2 rounds of revisions", "Ready to post, same week"],
     cta: "Start My Reels",
   },
@@ -463,10 +446,6 @@ const SERVICE_PANELS: Record<string, ServicePanelData> = {
     icon: <><rect x="3" y="3" width="18" height="18" rx="3" /><path d="M8 9h8M8 13h8M8 17h5" /></>,
     name: "Social Media Management",
     pain: "Your socials look abandoned.",
-    market: "$500–$1,500",
-    price: "$99",
-    unit: "/mo",
-    badge: "93% off",
     features: ["Posting & community management", "Monthly content calendar", "Comment & DM monitoring"],
     cta: "Build My Brand",
   },
@@ -474,9 +453,6 @@ const SERVICE_PANELS: Record<string, ServicePanelData> = {
     icon: <path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8" />,
     name: "AI Automation & CRM",
     pain: "Meta Ads leads go cold before anyone replies.",
-    price: "$299",
-    unit: "/mo",
-    setupNote: "+ $499 one-time setup",
     features: [
       "Meta Ads leads auto-start an AI conversation",
       "WhatsApp connected for instant replies",
@@ -489,14 +465,12 @@ const SERVICE_PANELS: Record<string, ServicePanelData> = {
 // ---------- Premium bundles (4 tiers) ----------
 function TierCard({
   name,
-  price,
   desc,
   features,
   popular,
   dark,
 }: {
   name: string;
-  price: string;
   desc: string;
   features: string[];
   popular?: boolean;
@@ -526,19 +500,8 @@ function TierCard({
       )}
       <div className={`font-display font-bold text-xl ${textColor}`}>{name}</div>
       <div className={`text-sm min-h-10 ${subColor}`}>{desc}</div>
-      {price === "Let's talk" ? (
-        <div className={`font-display font-extrabold text-[32px] ${textColor}`}>
-          {price}
-          <span className={`block text-sm font-medium mt-1 ${subColor}`}>Scoped to your business</span>
-        </div>
-      ) : (
-        <div className={`font-display font-extrabold text-[40px] ${textColor}`}>
-          {price}
-          <span className={`text-[15px] font-medium ${subColor}`}>/mo</span>
-        </div>
-      )}
-      <a href={price === "Let's talk" ? "/contact" : "/#book"} className={`no-underline font-bold text-[15px] py-3.5 rounded-xl text-center transition-all duration-200 hover:-translate-y-0.5 ${btnClass}`}>
-        {price === "Let's talk" ? "Talk to Us" : `Choose ${name}`}
+      <a href="/contact" className={`no-underline font-bold text-[15px] py-3.5 rounded-xl text-center transition-all duration-200 hover:-translate-y-0.5 ${btnClass}`}>
+        Contact Sales
       </a>
       <ul className={`m-0 pt-[18px] mt-1.5 border-t ${dark ? "border-[#2A2338]" : "border-simple-border"} list-none flex flex-col gap-[11px]`}>
         {features.map((f) => (
@@ -558,13 +521,12 @@ function PremiumPanel() {
   return (
     <div className="flex flex-col gap-10">
       <div className="max-w-[680px] mx-auto text-center flex flex-col gap-2.5">
-        <h3 className="m-0 font-display font-extrabold text-[26px]">Bundle it all, save the math</h3>
-        <p className="m-0 text-[15px] text-[#6B6580]">Four ways to go all-in. Each tier includes everything in the one before it.</p>
+        <h3 className="m-0 font-display font-extrabold text-[26px]">Premium bundles, everything in one plan</h3>
+        <p className="m-0 text-[15px] text-[#6B6580]">Four ways to go all-in. Each tier includes everything in the one before it. Contact sales for a quote.</p>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <TierCard
           name="Growth"
-          price="$699"
           desc="Launch and run ads, SEO and content — on autopilot."
           features={[
             "Standard website & GMB setup — free",
@@ -575,7 +537,6 @@ function PremiumPanel() {
         />
         <TierCard
           name="Scale"
-          price="$999"
           desc="Everything in Growth, plus automation that works while you sleep."
           popular
           features={[
@@ -587,7 +548,6 @@ function PremiumPanel() {
         />
         <TierCard
           name="Dominate"
-          price="$1,500"
           desc="Everything, plus AI that closes deals in your DMs."
           dark
           features={[
@@ -599,7 +559,6 @@ function PremiumPanel() {
         />
         <TierCard
           name="Custom"
-          price="Let's talk"
           desc="For businesses that need more than a plan — CRM, ERP and AI systems, built around you."
           dark
           features={["CRM & ERP integrations", "AI & MCP connections", "Dedicated strategy & build team"]}
@@ -692,12 +651,7 @@ function ProcessSection() {
 // ---------- Tab bar ----------
 const TABS: { key: string; label: string; icon: React.ReactNode }[] = [
   { key: "websites", label: "Websites", icon: <><rect x="2" y="4" width="20" height="14" rx="2" /><path d="M8 22h8M12 18v4" /></> },
-  { key: "meta", label: "Meta Ads", icon: <><path d="m3 11 18-5v12L3 14v-3z" /><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6" /></> },
-  { key: "google", label: "Google Ads", icon: <><circle cx="11" cy="11" r="7" /><path d="m21 21-4.3-4.3" /></> },
-  { key: "seo", label: "SEO", icon: <><path d="M3 20h18" /><path d="M6 16V10M11 16V6M16 16v-4M21 16V8" /></> },
-  { key: "video", label: "Video Editing", icon: <><rect x="2" y="6" width="14" height="12" rx="2" /><path d="m16 10 6-3v10l-6-3" /></> },
-  { key: "social", label: "Social Media", icon: <><rect x="3" y="3" width="18" height="18" rx="3" /><path d="M8 9h8M8 13h8M8 17h5" /></> },
-  { key: "automation", label: "AI Automation", icon: <path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8" /> },
+  { key: "services", label: "All Services", icon: <><rect x="3" y="3" width="7" height="7" rx="1.5" /><rect x="14" y="3" width="7" height="7" rx="1.5" /><rect x="3" y="14" width="7" height="7" rx="1.5" /><rect x="14" y="14" width="7" height="7" rx="1.5" /></> },
   { key: "premium", label: "Premium Bundles", icon: <path d="M12 2l2.5 6.5L21 9l-5 4.5L17.5 21 12 17l-5.5 4L8 13.5 3 9l6.5-.5z" /> },
 ];
 
@@ -709,13 +663,13 @@ export default function PricingContent() {
       {/* Hero */}
       <div className="bg-simple-surface-alt border-b border-simple-border">
         <Reveal className="max-w-[820px] mx-auto px-6 pt-[72px] pb-14 flex flex-col items-center gap-[18px] text-center">
-          <div className="text-sm font-bold tracking-[0.12em] uppercase text-simple-purple-deep">Pricing</div>
+          <div className="text-sm font-bold tracking-[0.12em] uppercase text-simple-purple-deep">Our Plans</div>
           <h1 className="m-0 font-display font-extrabold leading-[1.1] tracking-tight text-[clamp(2.3rem,4.6vw,3.6rem)]">
             Agency results, without agency prices
           </h1>
           <p className="m-0 text-[19px] text-simple-ink-soft max-w-[640px]">
-            Here&apos;s exactly what BizzOne costs — next to what Canadian agencies typically
-            charge for the same thing.
+            Websites, marketing and automation plans for every stage of your business. Contact
+            sales and we&apos;ll match you with the right one.
           </p>
           <div className="flex flex-wrap gap-6 justify-center pt-1.5 text-sm text-simple-ink-soft font-semibold">
             <span className="flex items-center gap-1.5"><Check size={16} />No long-term contracts</span>
@@ -745,12 +699,12 @@ export default function PricingContent() {
 
       {/* Tab-based pricing */}
       <div className="max-w-[1240px] mx-auto px-6 pt-[72px] pb-6 flex flex-col items-center gap-2.5 text-center">
-        <div className="text-sm font-bold tracking-[0.12em] uppercase text-simple-purple-deep">Pricing Plans</div>
+        <div className="text-sm font-bold tracking-[0.12em] uppercase text-simple-purple-deep">Our Plans</div>
         <h2 className="m-0 font-display font-extrabold leading-[1.15] tracking-tight text-[clamp(1.8rem,3.2vw,2.4rem)]">
-          Pick a service to see pricing
+          Pick a plan that fits your business
         </h2>
         <p className="m-0 text-base text-simple-ink-soft max-w-[560px]">
-          Every price, side by side with what agencies typically charge — or bundle it all below.
+          Websites, every service we offer, or a premium bundle that covers it all.
         </p>
       </div>
 
@@ -781,7 +735,7 @@ export default function PricingContent() {
         <div key={activeTab} className="animate-fade-slide-in">
           {activeTab === "websites" && <WebsitesPanel />}
           {activeTab === "premium" && <PremiumPanel />}
-          {SERVICE_PANELS[activeTab] && <ServicePanel s={SERVICE_PANELS[activeTab]} />}
+          {activeTab === "services" && <ServicesPanel />}
         </div>
       </div>
 
@@ -804,14 +758,14 @@ export default function PricingContent() {
       <div className="bg-simple-purple text-white">
         <div className="max-w-[1000px] mx-auto px-6 py-[72px] flex flex-col items-center gap-[22px] text-center">
           <h2 className="m-0 font-display font-extrabold leading-[1.1] tracking-tight text-[clamp(2rem,4vw,3rem)]">
-            Still comparing? Let&apos;s talk numbers.
+            Not sure which plan is right? Let&apos;s talk.
           </h2>
           <p className="m-0 text-lg max-w-[600px]">
-            Book a free call and we&apos;ll show you exactly what you&apos;d pay elsewhere — and
-            what you&apos;d pay here.
+            Contact our sales team and we&apos;ll recommend the plan that fits your goals and
+            budget.
           </p>
-          <Link href="/#book" className="bg-simple-ink text-white no-underline font-bold text-[17px] px-[30px] py-[17px] rounded-xl transition-all duration-200 hover:-translate-y-0.5 hover:text-white">
-            Book a Free Call
+          <Link href="/contact" className="bg-simple-ink text-white no-underline font-bold text-[17px] px-[30px] py-[17px] rounded-xl transition-all duration-200 hover:-translate-y-0.5 hover:text-white">
+            Contact Sales
           </Link>
         </div>
       </div>

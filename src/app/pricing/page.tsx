@@ -5,7 +5,7 @@ import PricingContent from "@/components/simple/PricingContent";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "Pricing | BizzOne Digital",
+  title: "Our Plans | BizzOne Digital",
   description:
     "Agency results without agency prices. Websites from $79, Meta Ads, Google Ads, SEO, video and social media from $99/mo, AI automation & CRM, and premium bundles.",
   path: "/pricing",
@@ -15,7 +15,7 @@ export default function PricingPage() {
   return (
     <>
       <PromoBar />
-      <NavBar active="Pricing" />
+      <NavBar active="Our Plans" />
       <PricingContent />
       <Footer />
     </>

@@ -62,7 +62,7 @@ export default function Footer() {
             <Link href="/" className="text-simple-footer-text no-underline hover:text-white">Home</Link>
             <Link href="/about" className="text-simple-footer-text no-underline hover:text-white">About Us</Link>
             <Link href="/services" className="text-simple-footer-text no-underline hover:text-white">All Services</Link>
-            <Link href="/pricing" className="text-simple-footer-text no-underline hover:text-white">Pricing</Link>
+            <Link href="/pricing" className="text-simple-footer-text no-underline hover:text-white">Our Plans</Link>
             <Link href="/our-work" className="text-simple-footer-text no-underline hover:text-white">Our Work</Link>
             <Link href="/contact" className="text-simple-footer-text no-underline hover:text-white">Contact</Link>
           </div>

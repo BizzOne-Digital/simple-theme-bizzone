@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Sora, Hanken_Grotesk } from "next/font/google";
 import "./globals.css";
-import WhatsAppButton from "@/components/WhatsAppButton";
 import JsonLd from "@/components/seo/JsonLd";
 import { SITE_URL } from "@/data/site";
 import { professionalServiceSchema, websiteSchema } from "@/lib/schema";
@@ -103,7 +102,6 @@ export default function RootLayout({
           data-source="WEB_USER"
         />
         {children}
-        <WhatsAppButton />
       </body>
     </html>
   );
