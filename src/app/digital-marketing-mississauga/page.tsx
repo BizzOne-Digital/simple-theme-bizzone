@@ -54,7 +54,7 @@ const FAQS = [
   },
   {
     q: "How much does digital marketing cost for a small business?",
-    a: "It depends on the services and scope. Website packages start from $79, and marketing services are quoted after a free strategy call so you only pay for what your business needs.",
+    a: "It depends on the services and scope. Website packages are a one-time payment, and marketing services are quoted after a free strategy call so you only pay for what your business needs.",
   },
 ];
 

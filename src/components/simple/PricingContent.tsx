@@ -124,8 +124,7 @@ const WEBSITE_PLANS: WebsitePlan[] = [
   {
     name: "Standard",
     desc: "A clean, professional site to get your business online fast.",
-    price: "$79",
-    cta: "Choose Standard",
+    cta: "Contact Sales",
     features: ["Up to 5 pages", "1–2 banner images", "Basic on-page SEO", "Mobile responsive"],
   },
   {
@@ -344,7 +343,6 @@ function CompareTable() {
             <th className="sticky left-0 z-10 bg-simple-ink py-5 px-4 md:px-6 text-left font-display font-bold text-sm text-white">Compare plans</th>
             <th className="py-5 px-4 text-center min-w-[120px]">
               <div className="font-display font-bold text-[15px] text-white">Standard</div>
-              <div className="font-display font-extrabold text-xl text-simple-lime mt-0.5">$79</div>
             </th>
             <th className="py-5 px-4 text-center min-w-[120px] bg-[#1A0F30]">
               <div className="font-display font-bold text-[15px] text-white">Premium</div>

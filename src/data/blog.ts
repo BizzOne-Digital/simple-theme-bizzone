@@ -64,7 +64,7 @@ export const BLOG_POSTS: BlogPost[] = [
       { type: "p", text: "For businesses that take appointments or payments online. Expect more pages, a booking or appointment form, payment setup, a gallery you can update yourself and a simple admin area." },
       { type: "h3", text: "eCommerce or custom website" },
       { type: "p", text: "For product sellers and businesses with complex workflows. Expect product management, order handling, payment gateways, automation and a custom design. Scope matters most here, so get a written list of what is included." },
-      { type: "callout", text: "For reference, BizzOne Digital's published [website design packages](/web-development) start at $79 for a Standard site, with Premium and Advanced packages for bookings, payments and eCommerce, and custom quotes for larger builds. Check the packages page for current pricing and inclusions." },
+      { type: "callout", text: "For reference, BizzOne Digital's published [website design packages](/web-development) include a Standard site, with Premium and Advanced packages for bookings, payments and eCommerce, and custom quotes for larger builds. Contact sales for current pricing and inclusions." },
       { type: "h2", text: "Ongoing costs owners often forget" },
       { type: "ul", items: [
         "Domain name renewal, paid every year.",

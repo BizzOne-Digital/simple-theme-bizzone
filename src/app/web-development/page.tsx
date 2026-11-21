@@ -13,7 +13,7 @@ export const revalidate = 300;
 export const metadata: Metadata = buildMetadata({
   title: "Website Design & Development in Mississauga | BizzOne",
   description:
-    "Fast, mobile-friendly websites for small businesses. Packages from $79 with SEO setup, booking and payments. See our work and start your project today.",
+    "Fast, mobile-friendly websites for small businesses. One-time packages with SEO setup, booking and payments. See our work and start your project today.",
   path: "/web-development",
 });
 

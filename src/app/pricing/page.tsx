@@ -7,7 +7,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata = buildMetadata({
   title: "Our Plans | BizzOne Digital",
   description:
-    "Agency results without agency prices. Websites from $79, Meta Ads, Google Ads, SEO, video and social media from $99/mo, AI automation & CRM, and premium bundles.",
+    "Our plans for websites, Meta Ads, Google Ads, SEO, video, social media, AI automation & CRM, and premium bundles. Contact sales for a quote.",
   path: "/pricing",
 });
 
