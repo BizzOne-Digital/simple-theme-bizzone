@@ -7,9 +7,9 @@ import { SITE_STATS, formatStat } from "@/data/site-stats";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "About BizzOne Digital | AI & Digital Growth Agency",
+  title: "About BizzOne Digital | Mississauga Marketing Agency",
   description:
-    "BizzOne Digital is a full-service digital marketing and automation agency based in Mississauga, Ontario, serving 500+ brands across Canada and the US.",
+    "Meet BizzOne Digital, a Mississauga digital marketing and automation agency serving 500+ brands in Canada and the US. See our story and values.",
   path: "/about",
 });
 

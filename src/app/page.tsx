@@ -18,9 +18,9 @@ import Footer from "@/components/simple/Footer";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "Digital Marketing & AI Automation Agency | BizzOne Digital",
+  title: "Digital Marketing Agency in Mississauga | BizzOne Digital",
   description:
-    "Mississauga digital marketing agency. Meta & Google Ads, SEO, content, websites and AI automation & CRM — managed by one team. Book a free growth audit.",
+    "BizzOne Digital is a Mississauga digital marketing agency: SEO, Google and Meta ads, websites, video and AI automation. Book a free growth audit.",
   path: "/",
 });
 

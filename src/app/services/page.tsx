@@ -7,9 +7,9 @@ import Footer from "@/components/simple/Footer";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "Digital Marketing & Web Services | BizzOne Digital",
+  title: "Digital Marketing & Web Services in Mississauga | BizzOne",
   description:
-    "Everything you need to attract, engage and convert customers, from one team: ads, SEO, content, video, design, websites, apps and AI automation.",
+    "SEO, Google and Meta ads, web design, apps, video, branding, social media and AI automation from one Mississauga team. Get a free growth audit.",
   path: "/services",
 });
 
@@ -82,7 +82,7 @@ export default function ServicesPage() {
             Our Services
           </div>
           <h1 className="m-0 font-display font-extrabold leading-[1.1] tracking-tight text-[clamp(2.3rem,4.6vw,3.6rem)]">
-            Digital marketing, web &amp; AI automation services
+            Digital marketing, web &amp; AI automation services in Mississauga
           </h1>
           <p className="m-0 text-[19px] text-simple-ink-soft max-w-[620px]">
             Everything you need to attract, engage and convert customers, from one team. Choose a

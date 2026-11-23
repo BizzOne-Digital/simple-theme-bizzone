@@ -26,17 +26,19 @@ export default function Hero() {
             transition={{ duration: 1.2, ease: "easeOut" }}
             className="flex flex-wrap items-center gap-2.5 text-[15px] font-medium text-simple-ink-soft"
           >
+            <h1 className="m-0 text-[15px] font-medium text-simple-ink-soft">Digital Marketing Agency in Mississauga</h1>
+            <span aria-hidden="true">·</span>
             <span>500+ businesses across Canada &amp; the US</span>
           </motion.div>
 
-          <motion.h1
+          <motion.p
             initial={{ opacity: 0, y: -160 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ type: "spring", stiffness: 140, damping: 11, mass: 1 }}
-            className="m-0 font-display font-extrabold leading-[1.05] tracking-tight text-[clamp(2.5rem,5vw,4.1rem)]"
+            className="m-0 font-display font-extrabold leading-[1.05] tracking-tight text-[clamp(2.5rem,5vw,4.1rem)] text-simple-ink"
           >
             More leads. More customers. <span className="text-simple-purple">One team</span> that runs it all.
-          </motion.h1>
+          </motion.p>
 
           <p className="m-0 max-w-[560px] text-xl text-simple-ink-soft">
             Ads, content, websites and CRM follow-up — handled by one agency, tracked in one place,

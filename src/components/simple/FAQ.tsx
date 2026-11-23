@@ -1,4 +1,6 @@
 import Reveal from "./Reveal";
+import JsonLd from "@/components/seo/JsonLd";
+import { faqSchema } from "@/lib/schema";
 
 const FAQS = [
   {
@@ -30,6 +32,7 @@ const FAQS = [
 export default function FAQ() {
   return (
     <div id="faq" className="border-t border-simple-border bg-simple-surface-alt text-simple-ink">
+      <JsonLd data={faqSchema(FAQS)} />
       <Reveal from="right" className="mx-auto flex max-w-[880px] flex-col gap-8 px-6 pb-[88px] pt-20">
         <h2 className="m-0 text-center font-display font-extrabold leading-[1.1] tracking-tight text-[clamp(2rem,3.6vw,3rem)]">
           Common questions

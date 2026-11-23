@@ -6,12 +6,13 @@ import Reveal from "@/components/simple/Reveal";
 import { BUSINESS } from "@/data/site";
 import { buildMetadata } from "@/lib/seo";
 import JsonLd from "@/components/seo/JsonLd";
+import { googleMapsEmbedUrl } from "@/data/site";
 import { breadcrumbSchema, contactPageSchema } from "@/lib/schema";
 
 export const metadata = buildMetadata({
-  title: "Contact BizzOne Digital | Free Strategy Call",
+  title: "Contact BizzOne Digital | Free Strategy Call in Mississauga",
   description:
-    "Contact BizzOne Digital, a digital marketing agency in Mississauga. Call, email or send us a message to book your free strategy call.",
+    "Contact BizzOne Digital at 55 Village Centre Pl, Mississauga. Call (289) 412-1562 or message us to book a free strategy call. Open Mon-Sat.",
   path: "/contact",
 });
 
@@ -62,7 +63,7 @@ export default function ContactPage() {
         <Reveal className="max-w-[820px] mx-auto px-6 pt-[72px] pb-14 flex flex-col items-center gap-[18px] text-center">
           <div className="text-sm font-bold tracking-[0.12em] uppercase text-simple-purple-deep">Contact Us</div>
           <h1 className="m-0 font-display font-extrabold leading-[1.1] tracking-tight text-[clamp(2.3rem,4.6vw,3.6rem)]">
-            Let&rsquo;s talk about growing your business
+            Contact BizzOne Digital: Book Your Free Strategy Call
           </h1>
           <p className="m-0 text-[19px] text-simple-ink-soft max-w-[620px]">
             Book a free strategy call, ask about a project or just say hello. Call, WhatsApp, email
@@ -123,6 +124,13 @@ export default function ContactPage() {
               </div>
             </div>
           </div>
+          <iframe
+            title="BizzOne Digital office location on Google Maps"
+            src={googleMapsEmbedUrl}
+            className="h-[260px] w-full rounded-2xl border border-simple-border"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
         </div>
 
         <ContactForm />

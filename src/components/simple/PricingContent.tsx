@@ -9,6 +9,8 @@ import { useState } from "react";
 import Link from "next/link";
 import Reveal from "@/components/simple/Reveal";
 import PaymentBadges from "@/components/simple/PaymentBadges";
+import JsonLd from "@/components/seo/JsonLd";
+import { faqSchema } from "@/lib/schema";
 
 function Check({ size = 15 }: { size?: number }) {
   return (
@@ -285,6 +287,7 @@ function WebsiteFAQ() {
   return (
     <div className="flex flex-col gap-6">
       <h3 className="m-0 font-display font-bold text-xl">Website questions</h3>
+      <JsonLd data={faqSchema(WEBSITE_FAQS)} />
       <div className="flex flex-col gap-3">
         {WEBSITE_FAQS.map((item) => (
           <details key={item.q} className="rounded-2xl border border-simple-border bg-white px-6 py-5">
