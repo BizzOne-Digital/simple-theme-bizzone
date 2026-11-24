@@ -43,7 +43,7 @@ export const SERVICES: Service[] = [
     short: "iOS, Android and cross-platform apps designed to launch fast and scale with your business.",
     badgeLabel: "Platforms",
     badgeValue: "iOS + Android",
-    href: "/app-development",
+    href: "/services",
     tagline: "From idea to App Store, mobile apps built to perform and scale.",
     overview: [
       "We design and build custom iOS, Android and cross-platform apps, from MVPs to full-featured products, with clean architecture and a smooth, intuitive user experience.",
@@ -61,7 +61,7 @@ export const SERVICES: Service[] = [
     short: "Local SEO, technical fixes, on-page optimisation and content that get your business found on Google.",
     badgeLabel: "Focus",
     badgeValue: "Local + Technical",
-    href: "/service/seo",
+    href: "/services",
     tagline: "Get found on Google by the customers already searching for what you sell.",
     overview: [
       "We audit, fix and grow your search visibility with local SEO, technical fixes, on-page optimisation and content built around what your customers search for.",
@@ -92,9 +92,9 @@ export const SERVICES: Service[] = [
     serviceType: "Pay-per-click and social media advertising",
     schemaDescription: "Google, Meta and TikTok ad campaign management with audience research, ad creative, A/B testing, conversion tracking and weekly CPL reporting.",
     related: [
-      { href: "/service/social-media-management", label: "Social media management", text: "Keep your organic channels active so people who click your ads find a brand worth following." },
-      { href: "/service/content-strategy", label: "Content strategy", text: "Plan the messaging and offers your campaigns test, so every ad starts from a clear angle." },
-      { href: "/service/design-and-branding", label: "Ad creative and branding", text: "Scroll-stopping ad designs that stay consistent with your brand." },
+      { href: "/services", label: "Social media management", text: "Keep your organic channels active so people who click your ads find a brand worth following." },
+      { href: "/services", label: "Content strategy", text: "Plan the messaging and offers your campaigns test, so every ad starts from a clear angle." },
+      { href: "/services", label: "Ad creative and branding", text: "Scroll-stopping ad designs that stay consistent with your brand." },
       { href: "/blog/google-ads-vs-meta-ads-for-local-businesses", label: "Google Ads vs Meta Ads for local businesses", text: "Our guide to choosing the right platform for your budget." },
     ],
   },
@@ -120,7 +120,7 @@ export const SERVICES: Service[] = [
     schemaDescription: "Logo design, brand identity, brand guidelines, social media creatives, ad and banner design and print materials.",
     related: [
       { href: "/our-work#logo", label: "Logo design portfolio", text: "See logos and brand identities we have created for real clients." },
-      { href: "/web-development", label: "Website design and development", text: "Carry your new brand through to a fast, mobile-friendly website." },
+      { href: "/websites", label: "Website design and development", text: "Carry your new brand through to a fast, mobile-friendly website." },
       { href: "/blog/logo-design-vs-full-brand-identity", label: "Logo design vs full brand identity", text: "Not sure which you need? Read our guide." },
     ],
   },
@@ -146,8 +146,8 @@ export const SERVICES: Service[] = [
     schemaDescription: "Short-form reels, promotional videos, on-site videography, product and brand shoots, motion graphics and platform-ready exports.",
     related: [
       { href: "/our-work#content", label: "Video and content portfolio", text: "Browse reels and short-form content we have produced." },
-      { href: "/service/social-media-management", label: "Social media management", text: "Get your videos scheduled, posted and managed consistently." },
-      { href: "/service/paid-advertising", label: "Paid advertising", text: "Turn your best-performing videos into ads that generate leads." },
+      { href: "/services", label: "Social media management", text: "Get your videos scheduled, posted and managed consistently." },
+      { href: "/services", label: "Paid advertising", text: "Turn your best-performing videos into ads that generate leads." },
     ],
   },
   {
@@ -171,8 +171,8 @@ export const SERVICES: Service[] = [
     serviceType: "Content strategy and editorial planning",
     schemaDescription: "Content audits and research, messaging and tone of voice, editorial calendars, channel strategy and performance tracking.",
     related: [
-      { href: "/service/seo", label: "SEO services", text: "Make sure the content you publish is built to be found on Google." },
-      { href: "/service/social-media-management", label: "Social media management", text: "Put your content calendar into action across every channel." },
+      { href: "/services", label: "SEO services", text: "Make sure the content you publish is built to be found on Google." },
+      { href: "/services", label: "Social media management", text: "Put your content calendar into action across every channel." },
       { href: "/blog/how-to-plan-a-month-of-social-media-content", label: "How to plan a month of social media content", text: "A practical walkthrough of our planning process." },
     ],
   },
@@ -198,8 +198,8 @@ export const SERVICES: Service[] = [
     schemaDescription: "Content calendars and scheduling, on-brand post design, community management, engagement and monthly performance reports.",
     related: [
       { href: "/our-work#social", label: "Social media portfolio", text: "See posts, stories and carousels we have designed for clients." },
-      { href: "/service/content-strategy", label: "Content strategy", text: "Start with a plan so every post has a purpose." },
-      { href: "/service/paid-advertising", label: "Paid social advertising", text: "Boost reach and leads with targeted Meta and TikTok campaigns." },
+      { href: "/services", label: "Content strategy", text: "Start with a plan so every post has a purpose." },
+      { href: "/services", label: "Paid social advertising", text: "Boost reach and leads with targeted Meta and TikTok campaigns." },
     ],
   },
   {
@@ -225,7 +225,7 @@ export const SERVICES: Service[] = [
     related: [
       { href: "/blog/what-is-crm-automation", label: "What is CRM automation?", text: "How a small business can use CRM automation to stop losing leads." },
       { href: "/blog/gohighlevel-automation-ideas-for-lead-follow-up", label: "GoHighLevel automation ideas for lead follow-up", text: "Practical workflows you can set up this month." },
-      { href: "/service/paid-advertising", label: "Paid advertising", text: "Feed your automated follow-up with a steady flow of new leads." },
+      { href: "/services", label: "Paid advertising", text: "Feed your automated follow-up with a steady flow of new leads." },
     ],
   },
 ];
@@ -234,7 +234,7 @@ export const getService = (slug: string): Service | undefined =>
   SERVICES.find((s) => s.slug === slug);
 
 /** Canonical URL path for a service (some services have dedicated pages). */
-export const serviceHref = (s: Service) => s.href ?? `/service/${s.slug}`;
+export const serviceHref = (s: Service) => s.href ?? "/services";
 
 /** Services rendered by the dynamic /service/[slug] route. */
 export const DYNAMIC_SERVICES = SERVICES.filter((s) => !s.href);

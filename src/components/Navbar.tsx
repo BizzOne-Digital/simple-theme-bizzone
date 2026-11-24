@@ -12,7 +12,7 @@ import NeonButton from "@/components/ui/NeonButton";
 // Every service page, including SEO, App Development and Web Development.
 const DROPDOWN_SERVICES = [
   ...SERVICES.map((s) => ({ key: s.slug, title: s.title, href: serviceHref(s), icon: s.icon })),
-  { key: "web-development", title: "Web Development", href: "/web-development", icon: Code2 },
+  { key: "web-development", title: "Web Development", href: "/websites", icon: Code2 },
 ];
 
 export default function Navbar() {

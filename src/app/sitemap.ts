@@ -1,11 +1,10 @@
 import type { MetadataRoute } from "next";
 import { absoluteUrl } from "@/lib/seo";
-import { DYNAMIC_SERVICES } from "@/lib/services";
 import { PUBLISHED_POSTS } from "@/data/blog";
 import { CASE_STUDIES } from "@/data/case-studies";
 
 /** Update when site-wide content changes. Blog posts use their own dates. */
-const SITE_LAST_UPDATED = "2026-09-26";
+const SITE_LAST_UPDATED = "2026-11-24";
 
 /**
  * Only real, public, indexable pages. Admin, login and API routes are excluded.
@@ -22,10 +21,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     page("/", 1, "weekly"),
     page("/about", 0.7),
     page("/services", 0.8),
-    page("/web-development", 0.9, "weekly"),
-    page("/app-development", 0.8),
-    page("/service/seo", 0.9),
-    ...DYNAMIC_SERVICES.map((s) => page(`/service/${s.slug}`, 0.8)),
+    page("/websites", 0.9, "weekly"),
+    page("/pricing", 0.8),
     page("/our-work", 0.7),
     page("/portfolio", 0.7),
     page("/case-studies", 0.6),

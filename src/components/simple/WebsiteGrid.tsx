@@ -14,7 +14,7 @@ export default function WebsiteGrid() {
   const industries = useMemo(() => {
     const counts = new Map<string, number>();
     for (const s of WEBSITE_PROJECTS) counts.set(s.industry, (counts.get(s.industry) ?? 0) + 1);
-    return [...counts.entries()].sort((a, b) => b[1] - a[1]);
+    return [...counts.entries()].sort((a, b) => a[0].localeCompare(b[0]));
   }, []);
 
   const filtered = industry === "All" ? WEBSITE_PROJECTS : WEBSITE_PROJECTS.filter((s) => s.industry === industry);
@@ -29,10 +29,10 @@ export default function WebsiteGrid() {
       key={name}
       type="button"
       onClick={() => pick(name)}
-      className={`rounded-full border px-4 py-2 text-sm font-bold transition-colors ${
+      className={`rounded-2xl border px-3 py-2 text-[13px] sm:rounded-full sm:px-4 sm:text-sm font-bold transition-colors ${
         industry === name
           ? "border-simple-purple bg-simple-purple text-white"
-          : "border-simple-border bg-white text-simple-ink hover:border-simple-purple hover:text-simple-purple"
+          : "border-simple-border bg-white text-simple-ink [@media(hover:hover)]:hover:border-simple-purple [@media(hover:hover)]:hover:text-simple-purple"
       }`}
     >
       {name} <span className="opacity-70">({count})</span>
@@ -41,7 +41,7 @@ export default function WebsiteGrid() {
 
   return (
     <div className="flex flex-col gap-8">
-      <div className="flex flex-wrap gap-2.5">
+      <div className="grid grid-cols-2 gap-2.5 sm:flex sm:flex-wrap">
         {chip("All", WEBSITE_PROJECTS.length)}
         {industries.map(([name, count]) => chip(name, count))}
       </div>

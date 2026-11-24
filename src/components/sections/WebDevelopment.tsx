@@ -318,7 +318,7 @@ export default function WebDevelopment({
             </div>
             <p className="mx-auto mt-3 max-w-xl text-base text-white/70">
               Take a look at some of our recent projects. Every site launches with on-page SEO basics. To keep climbing on Google, pair your website with our{" "}
-              <Link href="/service/seo" className="font-semibold text-brand-mint underline-offset-4 hover:underline">SEO services</Link>.
+              <Link href="/services" className="font-semibold text-brand-mint underline-offset-4 hover:underline">SEO services</Link>.
             </p>
             <Link href="/our-work#websites" className="mt-5 inline-flex items-center gap-2 rounded-full border border-brand-mint/40 bg-brand-mint/10 px-5 py-2.5 text-sm font-bold text-brand-mint transition-all hover:-translate-y-0.5 hover:bg-brand-mint/20">
               View Our Website Design Portfolio <ArrowRight size={15} />

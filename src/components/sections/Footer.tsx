@@ -8,15 +8,15 @@ import { BUSINESS, SOCIAL_LINKS } from "@/data/site";
 
 /** Every service page, linked directly (no more /#services placeholders). */
 const SERVICES_LINKS = [
-  { label: "SEO", href: "/service/seo" },
-  { label: "Paid Advertising", href: "/service/paid-advertising" },
-  { label: "Design & Branding", href: "/service/design-and-branding" },
-  { label: "Video Editing & Production", href: "/service/video-editing-and-production" },
-  { label: "Content Strategy", href: "/service/content-strategy" },
-  { label: "Social Media Management", href: "/service/social-media-management" },
-  { label: "AI Automation", href: "/service/ai-automation" },
-  { label: "App Development", href: "/app-development" },
-  { label: "Web Development", href: "/web-development" },
+  { label: "SEO", href: "/services" },
+  { label: "Paid Advertising", href: "/services" },
+  { label: "Design & Branding", href: "/services" },
+  { label: "Video Editing & Production", href: "/services" },
+  { label: "Content Strategy", href: "/services" },
+  { label: "Social Media Management", href: "/services" },
+  { label: "AI Automation", href: "/services" },
+  { label: "App Development", href: "/services" },
+  { label: "Web Development", href: "/websites" },
 ];
 
 const ICONS = { Facebook, Instagram, LinkedIn: Linkedin } as const;

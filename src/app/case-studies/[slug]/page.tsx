@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 }
 
 const serviceLink = (slug: string) => {
-  if (slug === "web-development") return { href: "/web-development", label: "Web Development" };
+  if (slug === "web-development") return { href: "/websites", label: "Web Development" };
   const s = getService(slug);
   return s ? { href: serviceHref(s), label: s.title } : null;
 };

@@ -29,8 +29,10 @@ const nextConfig = {
 
   async redirects() {
     return [
-      // App Development has a dedicated page; the old duplicate service URL points to it.
-      { source: "/service/app-development", destination: "/app-development", statusCode: 301 },
+      // Individual service pages were removed; old URLs go to the closest live page.
+      { source: "/service/:path*", destination: "/services", statusCode: 301 },
+      { source: "/app-development", destination: "/services", statusCode: 301 },
+      { source: "/web-development", destination: "/websites", statusCode: 301 },
     ];
   },
 };

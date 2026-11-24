@@ -46,7 +46,7 @@ export default function Footer() {
   return (
     <div className="bg-simple-footer-bg text-simple-footer-text">
       <div className="mx-auto flex max-w-[1240px] flex-col gap-9 px-6 pb-8 pt-14">
-        <div className="grid grid-cols-1 gap-8 text-[15px] sm:grid-cols-2 lg:grid-cols-5">
+        <div className="grid grid-cols-1 gap-8 text-[15px] sm:grid-cols-2 lg:grid-cols-4">
           <div className="flex flex-col gap-3">
             <div className="flex items-center gap-2.5">
               <Image src="/fav.png" alt="BizzOne Digital logo" width={36} height={36} />
@@ -62,25 +62,10 @@ export default function Footer() {
             <Link href="/" className="text-simple-footer-text no-underline hover:text-white">Home</Link>
             <Link href="/about" className="text-simple-footer-text no-underline hover:text-white">About Us</Link>
             <Link href="/services" className="text-simple-footer-text no-underline hover:text-white">All Services</Link>
+            <Link href="/websites" className="text-simple-footer-text no-underline hover:text-white">Websites</Link>
             <Link href="/pricing" className="text-simple-footer-text no-underline hover:text-white">Our Plans</Link>
             <Link href="/our-work" className="text-simple-footer-text no-underline hover:text-white">Our Work</Link>
             <Link href="/contact" className="text-simple-footer-text no-underline hover:text-white">Contact</Link>
-          </div>
-
-          <div className="flex flex-col gap-2">
-            <div className="font-bold text-white">Services</div>
-            {[
-              ["SEO Services", "/service/seo"],
-              ["Paid Advertising", "/service/paid-advertising"],
-              ["Web Development", "/web-development"],
-              ["App Development", "/service/app-development"],
-              ["Social Media Management", "/service/social-media-management"],
-              ["Video Editing & Production", "/service/video-editing-and-production"],
-              ["Design & Branding", "/service/design-and-branding"],
-              ["AI Automation", "/service/ai-automation"],
-            ].map(([label, href]) => (
-              <Link key={href} href={href} className="text-simple-footer-text no-underline hover:text-white">{label}</Link>
-            ))}
           </div>
 
           <div className="flex flex-col gap-2">

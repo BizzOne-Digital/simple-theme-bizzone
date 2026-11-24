@@ -7,6 +7,7 @@ const NAV_LINKS = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
+  { href: "/websites", label: "Websites" },
   { href: "/pricing", label: "Our Plans" },
   { href: "/our-work", label: "Our Work" },
   { href: "/contact", label: "Contact" },
@@ -24,7 +25,7 @@ export default function NavBar({ active }: { active?: string }) {
           </span>
         </Link>
 
-        <div className="hidden md:flex flex-wrap gap-7 text-[15px] font-medium">
+        <div className="hidden md:flex flex-wrap gap-x-6 gap-y-2 text-[15px] font-medium">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}

@@ -29,12 +29,12 @@ const WHY_LOCAL = [
 ];
 
 const SERVICES = [
-  { icon: Search, title: "SEO & local SEO", href: "/service/seo", body: "Rank in Google and the Maps results when people in Mississauga search for what you do." },
-  { icon: Megaphone, title: "Google, Meta & TikTok ads", href: "/service/paid-advertising", body: "Targeted campaigns by neighbourhood, radius or audience, with weekly cost-per-lead reporting." },
-  { icon: Share2, title: "Social media management", href: "/service/social-media-management", body: "Consistent, on-brand content that keeps your business visible to local customers." },
-  { icon: Code2, title: "Website design & development", href: "/web-development", body: "Fast, mobile-friendly websites with SEO setup, bookings and payments." },
-  { icon: Bot, title: "AI & CRM automation", href: "/service/ai-automation", body: "Instant lead follow-up, reminders and review requests that run 24/7." },
-  { icon: Palette, title: "Logo design & branding", href: "/service/design-and-branding", body: "A brand identity that looks professional on your sign, vehicle, website and socials." },
+  { icon: Search, title: "SEO & local SEO", href: "/services", body: "Rank in Google and the Maps results when people in Mississauga search for what you do." },
+  { icon: Megaphone, title: "Google, Meta & TikTok ads", href: "/services", body: "Targeted campaigns by neighbourhood, radius or audience, with weekly cost-per-lead reporting." },
+  { icon: Share2, title: "Social media management", href: "/services", body: "Consistent, on-brand content that keeps your business visible to local customers." },
+  { icon: Code2, title: "Website design & development", href: "/websites", body: "Fast, mobile-friendly websites with SEO setup, bookings and payments." },
+  { icon: Bot, title: "AI & CRM automation", href: "/services", body: "Instant lead follow-up, reminders and review requests that run 24/7." },
+  { icon: Palette, title: "Logo design & branding", href: "/services", body: "A brand identity that looks professional on your sign, vehicle, website and socials." },
 ];
 
 // Authentic Google reviews already displayed on this site (see TrustReviews).
@@ -158,7 +158,7 @@ export default function MississaugaPage() {
               Get started with our{" "}
               <Link href="/blog/local-seo-checklist-for-mississauga-businesses" className="font-semibold text-brand-mint underline-offset-4 hover:underline">local SEO checklist for Mississauga businesses</Link>{" "}
               or learn about our{" "}
-              <Link href="/service/seo" className="font-semibold text-brand-mint underline-offset-4 hover:underline">SEO services in Mississauga</Link>.
+              <Link href="/services" className="font-semibold text-brand-mint underline-offset-4 hover:underline">SEO services in Mississauga</Link>.
             </p>
           </Reveal>
         </div>

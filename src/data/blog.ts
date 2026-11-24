@@ -46,7 +46,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2026-09-26",
     readingMinutes: 6,
     status: "published",
-    relatedService: { href: "/web-development", label: "Website design packages" },
+    relatedService: { href: "/websites", label: "Website design packages" },
     body: [
       { type: "p", text: "Ask five agencies what a website costs and you will get five very different answers. That is not because anyone is hiding the price. It is because \"a website\" can mean a one-page brochure or a full online store with bookings, payments and an admin dashboard. The good news: the cost comes down to a small number of factors you can control." },
       { type: "h2", text: "The five factors that decide the price" },
@@ -64,7 +64,7 @@ export const BLOG_POSTS: BlogPost[] = [
       { type: "p", text: "For businesses that take appointments or payments online. Expect more pages, a booking or appointment form, payment setup, a gallery you can update yourself and a simple admin area." },
       { type: "h3", text: "eCommerce or custom website" },
       { type: "p", text: "For product sellers and businesses with complex workflows. Expect product management, order handling, payment gateways, automation and a custom design. Scope matters most here, so get a written list of what is included." },
-      { type: "callout", text: "For reference, BizzOne Digital's published [website design packages](/web-development) include a Standard site, with Premium and Advanced packages for bookings, payments and eCommerce, and custom quotes for larger builds. Contact sales for current pricing and inclusions." },
+      { type: "callout", text: "For reference, BizzOne Digital's published [website design packages](/websites) include a Standard site, with Premium and Advanced packages for bookings, payments and eCommerce, and custom quotes for larger builds. Contact sales for current pricing and inclusions." },
       { type: "h2", text: "Ongoing costs owners often forget" },
       { type: "ul", items: [
         "Domain name renewal, paid every year.",
@@ -90,7 +90,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2026-09-26",
     readingMinutes: 6,
     status: "published",
-    relatedService: { href: "/service/paid-advertising", label: "Paid advertising services" },
+    relatedService: { href: "/services", label: "Paid advertising services" },
     body: [
       { type: "p", text: "Local business owners often ask us which platform is \"better\". The honest answer is that Google Ads and Meta Ads (Facebook and Instagram) do different jobs. Once you understand the difference, the choice usually becomes obvious." },
       { type: "h2", text: "Google Ads: capture existing demand" },
@@ -119,8 +119,8 @@ export const BLOG_POSTS: BlogPost[] = [
         "Fast follow-up. A lead that waits hours for a reply often goes to a competitor. [CRM automation](/blog/what-is-crm-automation) can respond in seconds.",
         "Reporting on cost per lead (CPL) and lead quality, not only impressions and clicks.",
       ] },
-      { type: "p", text: "Strong ads also need strong creative and consistent messaging, which is where [content strategy](/service/content-strategy) and [social media management](/service/social-media-management) support your paid campaigns." },
-      { type: "p", text: "Not sure where to start? Our [paid advertising team](/service/paid-advertising) can review your market and recommend a starting budget and platform on a free strategy call." },
+      { type: "p", text: "Strong ads also need strong creative and consistent messaging, which is where [content strategy](/services) and [social media management](/services) support your paid campaigns." },
+      { type: "p", text: "Not sure where to start? Our [paid advertising team](/services) can review your market and recommend a starting budget and platform on a free strategy call." },
     ],
   },
   {
@@ -135,7 +135,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2026-09-26",
     readingMinutes: 5,
     status: "published",
-    relatedService: { href: "/service/ai-automation", label: "AI & CRM automation services" },
+    relatedService: { href: "/services", label: "AI & CRM automation services" },
     body: [
       { type: "p", text: "A CRM (customer relationship management system) is where your leads and customers live: names, contact details, conversations and where each person sits in your sales process. CRM automation means the system takes action for you when something happens, instead of relying on someone to remember." },
       { type: "h2", text: "Why small businesses need it most" },
@@ -156,7 +156,7 @@ export const BLOG_POSTS: BlogPost[] = [
         "Find the steps where leads wait or get forgotten.",
         "Automate those steps first, measure response time and booking rate, then expand.",
       ] },
-      { type: "p", text: "Platforms like GoHighLevel make this practical for small teams. See our [GoHighLevel automation ideas for lead follow-up](/blog/gohighlevel-automation-ideas-for-lead-follow-up), or talk to us about [AI and CRM automation](/service/ai-automation) built around your process." },
+      { type: "p", text: "Platforms like GoHighLevel make this practical for small teams. See our [GoHighLevel automation ideas for lead follow-up](/blog/gohighlevel-automation-ideas-for-lead-follow-up), or talk to us about [AI and CRM automation](/services) built around your process." },
     ],
   },
   {
@@ -171,7 +171,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2026-09-26",
     readingMinutes: 6,
     status: "published",
-    relatedService: { href: "/service/ai-automation", label: "GoHighLevel & AI automation" },
+    relatedService: { href: "/services", label: "GoHighLevel & AI automation" },
     body: [
       { type: "p", text: "GoHighLevel combines a CRM, pipelines, messaging, calendars and workflow automation in one platform. Its real value comes from the workflows you build. Here are the follow-up automations we recommend most often for local and service businesses." },
       { type: "h2", text: "1. Speed-to-lead" },
@@ -195,7 +195,7 @@ export const BLOG_POSTS: BlogPost[] = [
         "Always give a human an easy way to take over the conversation.",
         "Track response time, booking rate and show rate every month.",
       ] },
-      { type: "p", text: "New to the concept? Start with [what CRM automation is](/blog/what-is-crm-automation). Ready to build? Our [AI automation team](/service/ai-automation) sets up GoHighLevel workflows around your exact sales process." },
+      { type: "p", text: "New to the concept? Start with [what CRM automation is](/blog/what-is-crm-automation). Ready to build? Our [AI automation team](/services) sets up GoHighLevel workflows around your exact sales process." },
     ],
   },
   {
@@ -210,7 +210,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2026-09-26",
     readingMinutes: 7,
     status: "published",
-    relatedService: { href: "/service/seo", label: "SEO services in Mississauga" },
+    relatedService: { href: "/services", label: "SEO services in Mississauga" },
     body: [
       { type: "p", text: "When someone in Mississauga searches for a service \"near me\", Google shows a map with a handful of businesses above the regular results. Getting into that group is what local SEO is about. Use this checklist to cover the fundamentals." },
       { type: "h2", text: "1. Google Business Profile" },
@@ -249,7 +249,7 @@ export const BLOG_POSTS: BlogPost[] = [
       { type: "p", text: "Get listed in reputable local and industry directories, local business associations and community sponsorships. Relevant local mentions help Google trust your location." },
       { type: "h2", text: "8. Track what matters" },
       { type: "p", text: "Monitor calls, direction requests and website clicks from your Google Business Profile, plus rankings and organic leads from Search Console and analytics. Review them monthly." },
-      { type: "p", text: "Want this done for you? Our [SEO services](/service/seo) cover local SEO, technical fixes and monthly reporting for businesses in Mississauga and across Canada. Learn more about our [digital marketing services in Mississauga](/digital-marketing-mississauga)." },
+      { type: "p", text: "Want this done for you? Our [SEO services](/services) cover local SEO, technical fixes and monthly reporting for businesses in Mississauga and across Canada. Learn more about our [digital marketing services in Mississauga](/digital-marketing-mississauga)." },
     ],
   },
   {
@@ -264,7 +264,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2026-09-26",
     readingMinutes: 5,
     status: "published",
-    relatedService: { href: "/service/design-and-branding", label: "Logo design & branding services" },
+    relatedService: { href: "/services", label: "Logo design & branding services" },
     body: [
       { type: "p", text: "\"We just need a logo\" is one of the most common requests we get. Sometimes that is exactly right. Other times the business really needs a brand identity, and a logo alone leaves them with inconsistent flyers, social posts and signage a few months later." },
       { type: "h2", text: "What a logo is" },
@@ -293,7 +293,7 @@ export const BLOG_POSTS: BlogPost[] = [
       ] },
       { type: "h2", text: "Why consistency pays off" },
       { type: "p", text: "Customers need to see a brand several times before they remember it. When every post, ad and sign uses the same colours, fonts and style, each impression builds on the last. When they don't, you are effectively starting again every time." },
-      { type: "p", text: "Browse our [logo design portfolio](/our-work#logo) for examples, or explore our [logo design and branding services](/service/design-and-branding)." },
+      { type: "p", text: "Browse our [logo design portfolio](/our-work#logo) for examples, or explore our [logo design and branding services](/services)." },
     ],
   },
   {
@@ -308,7 +308,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2026-09-26",
     readingMinutes: 6,
     status: "published",
-    relatedService: { href: "/service/social-media-management", label: "Social media management services" },
+    relatedService: { href: "/services", label: "Social media management services" },
     body: [
       { type: "p", text: "Posting whenever you find a spare minute leads to long gaps, rushed posts and content that doesn't support your business goals. A monthly content calendar fixes all three. Here is a simple process any small business can follow." },
       { type: "h2", text: "Step 1: Pick one goal for the month" },
@@ -334,7 +334,7 @@ export const BLOG_POSTS: BlogPost[] = [
       ] },
       { type: "h2", text: "Step 6: Engage and review" },
       { type: "p", text: "Scheduling saves time, but replies and DMs still need a human. At the end of the month, check which posts drove profile visits, messages and enquiries, not just likes, and use that to plan next month." },
-      { type: "p", text: "Need a strategy first? Start with [content strategy](/service/content-strategy). Want it handled for you? See our [social media management services](/service/social-media-management) and [video editing and production](/service/video-editing-and-production)." },
+      { type: "p", text: "Need a strategy first? Start with [content strategy](/services). Want it handled for you? See our [social media management services](/services) and [video editing and production](/services)." },
     ],
   },
   {
@@ -349,7 +349,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2026-09-26",
     readingMinutes: 6,
     status: "published",
-    relatedService: { href: "/app-development", label: "Mobile app development" },
+    relatedService: { href: "/services", label: "Mobile app development" },
     body: [
       { type: "p", text: "There is no single price for a mobile app, and any fixed number quoted without understanding your idea is a guess. What we can do is explain exactly what drives the cost, so you can plan a sensible budget and ask the right questions." },
       { type: "h2", text: "What drives mobile app development cost" },
@@ -377,7 +377,7 @@ export const BLOG_POSTS: BlogPost[] = [
         "Share examples of apps you like and why.",
         "Mention any systems it must connect to.",
       ] },
-      { type: "p", text: "BizzOne Digital scopes every app individually, from lean MVPs to enterprise apps. [Request a free, no-obligation app development quote](/app-development) and we will send a tailored proposal." },
+      { type: "p", text: "BizzOne Digital scopes every app individually, from lean MVPs to enterprise apps. [Request a free, no-obligation app development quote](/services) and we will send a tailored proposal." },
     ],
   },
 ];

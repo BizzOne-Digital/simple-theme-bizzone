@@ -32,7 +32,7 @@ export const PORTFOLIO: PortfolioCategory[] = [
     sub: "Brand Identity",
     color: "#B47BFF",
     accent: "#4C0A8F",
-    serviceHref: "/service/design-and-branding",
+    serviceHref: "/services",
     images: [
       { src: "/portfolio/logo/logo-design-bizzone-digital.webp", alt: "BizzOne Digital logo design shown on a branded coffee mug", width: 1080, height: 1080, span: "col-span-1 row-span-2" },
       { src: "/portfolio/logo/logo-design-silken-traders.webp", alt: "Gold lion shield logo design for Silken Traders by BizzOne Digital", width: 1080, height: 1080, span: "col-span-1 row-span-2" },
@@ -55,7 +55,7 @@ export const PORTFOLIO: PortfolioCategory[] = [
     sub: "Website Design & Development",
     color: "#C8F31D",
     accent: "#1a3a00",
-    serviceHref: "/web-development",
+    serviceHref: "/websites",
     images: [
       { src: "/portfolio/web/website-design-bizzone-digital.webp", alt: "BizzOne Digital agency website displayed on a laptop", width: 1600, height: 900, span: "col-span-1 row-span-2" },
       { src: "/portfolio/web/website-design-cobb-church-network.webp", alt: "Website design for Cobb Church Network shown on a desktop monitor", width: 1600, height: 900, span: "col-span-1" },
@@ -71,7 +71,7 @@ export const PORTFOLIO: PortfolioCategory[] = [
     sub: "Content Creation & Creative",
     color: "#EA4335",
     accent: "#4e0a0a",
-    serviceHref: "/service/social-media-management",
+    serviceHref: "/services",
     images: [
       { src: "/portfolio/media/social-media-facebook-cover-haven-tire-garage.webp", alt: "Facebook cover design for Haven Tire Garage by BizzOne Digital", width: 1600, height: 900, span: "col-span-1" },
       { src: "/portfolio/media/social-media-facebook-cover-silken-traders.webp", alt: "Facebook cover design for Silken Traders by BizzOne Digital", width: 1600, height: 900, span: "col-span-1" },
@@ -92,7 +92,7 @@ export const PORTFOLIO: PortfolioCategory[] = [
     sub: "Video Editing & Production",
     color: "#FBBC05",
     accent: "#4e3a00",
-    serviceHref: "/service/video-editing-and-production",
+    serviceHref: "/services",
     images: [
       { src: "/portfolio/content/video-reel-amritsari-kulcha.webp", alt: "Short-form food reel featuring Amritsari kulcha, shown on a phone", width: 1080, height: 1080, span: "col-span-1 row-span-2" },
       { src: "/portfolio/content/video-reel-haven-tint-and-tire.webp", alt: "Short-form video for Haven Tint & Tire shown on a smartphone", width: 1080, height: 1080, span: "col-span-1 row-span-2" },
