@@ -173,12 +173,7 @@ function WebsitePlanCard({ plan }: { plan: WebsitePlan }) {
           <div className="font-display font-extrabold text-[38px] leading-none">{plan.price}</div>
           <div className="mt-1.5 text-sm font-semibold text-simple-ink-soft">One-time payment</div>
         </div>
-      ) : (
-        <div className="flex min-h-[68px] flex-col justify-center">
-          <div className="font-display font-bold text-[19px] leading-tight text-simple-ink">Contact sales</div>
-          <div className="mt-1.5 text-sm font-semibold text-simple-ink-soft">for a custom quote</div>
-        </div>
-      )}
+      ) : null}
       <Link
         href={plan.price ? "/#book" : "/contact"}
         className={`no-underline font-bold text-[15px] py-[13px] rounded-[10px] text-center transition-all duration-200 hover:-translate-y-0.5 ${
